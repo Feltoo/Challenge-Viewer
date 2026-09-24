@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const id = challenge.uid || challenge.id || challenge._id;
-            const res = await fetch(`/api/local/question/${id}`);
+            const res = await fetch(`/qbank/${id}.json`);
             const stepsContainer = document.getElementById('stepsContainer');
 
             if (res.ok) {
