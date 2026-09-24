@@ -77,6 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         sortedUnitIds.forEach(unitId => {
+            const idNum = parseInt(unitId);
+            // Skip units 0 through 2000
+            if (!isNaN(idNum) && idNum >= 0 && idNum <= 2000) {
+                return;
+            }
+
             const unit = state.unitMap.get(unitId) || { name: `Unit ${unitId}`, id: unitId };
             const unitChallenges = state.groupedChallenges.get(unitId) || [];
             
