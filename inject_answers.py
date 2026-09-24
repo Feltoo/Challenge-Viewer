@@ -1,11 +1,12 @@
 import os
 import json
 import re
+import argparse
 
-MD_FILES = [
-    r"C:\Users\Felto\.gemini\antigravity-ide\brain\4ea54671-8aad-485a-bc2e-6c8efa4ada7d\answer_key_3031_3039.md",
-    r"C:\Users\Felto\.gemini\antigravity-ide\brain\4ea54671-8aad-485a-bc2e-6c8efa4ada7d\answer_key_3038_3039.md"
-]
+parser = argparse.ArgumentParser()
+parser.add_argument("--markdown", nargs="+", help="Markdown files to process")
+args = parser.parse_args()
+MD_FILES = args.markdown if args.markdown else []
 
 QBANK_DIR = r"c:\Users\Felto\.gemini\antigravity\scratch\challenge-viewer\public\qbank"
 CHALLENGES_FILE = r"c:\Users\Felto\.gemini\antigravity\scratch\challenge-viewer\public\challenges.json"
@@ -39,7 +40,7 @@ def parse_markdowns():
                 continue
                 
             # Match Challenge
-            ch_match = re.match(r'^##\s+Challenge\s+\d+:\s+(.*)', line_str, re.IGNORECASE)
+            ch_match = re.match(r'^##\s+(?:Challenge\s+\d+:\s+)?(.*)', line_str, re.IGNORECASE)
             if ch_match:
                 current_challenge = ch_match.group(1).strip().lower()
                 if current_unit:
@@ -47,20 +48,20 @@ def parse_markdowns():
                         answers[current_unit][current_challenge] = {'easy': {}, 'moderate': {}, 'hard': {}}
                 continue
                 
-            # Match Difficulty (including ALL DIFFICULTIES or combined MODERATE / HARD)
-            diff_match = re.match(r'^###\s+(EASY|MODERATE\s*/\s*HARD|MODERATE|HARD|ALL\s+DIFFICULTIES)', line_str, re.IGNORECASE)
+            # Match Difficulty
+            diff_match = re.match(r'^###\s+(.*)', line_str, re.IGNORECASE)
             if diff_match:
                 group = diff_match.group(1).strip().lower()
                 if 'all' in group:
                     current_diff = 'all'
-                elif '/' in group:
+                elif 'and' in group or '/' in group:
                     current_diff = 'mod_hard'
                 else:
                     current_diff = group
                 continue
                 
             # Match Step
-            step_match = re.match(r'^\*\*Step\s+(\d+).*?\*\*', line_str, re.IGNORECASE)
+            step_match = re.match(r'^(?:\*\*|####\s+)Step\s+(\d+).*?(?:\*\*|$)', line_str, re.IGNORECASE)
             if step_match:
                 current_step = int(step_match.group(1))
                 current_answer_buf = [] # Reset buffer

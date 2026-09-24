@@ -1,0 +1,1335 @@
+
+--- Page 1 ---
+THE LAB CODER 
+1Advanced Notes Part 2  (update 18 Aug 2026) 
+Notes: http://tinyurl.com/TheLabAdvanced2 
+Copyright © by The Lab Education Centre Pte Ltd. All rights reserved. Unauthorised sharing, distribution or use of materials from this document is strictly prohibited. 
+--- Page 2 ---
+Content
+2PYTHON CODING 
+[3040] Try-Exception 
+[3041] Function with parameters 
+[3041] Function with return values 
+[3042] 2D List
+[3043] Dictionary
+[3044] File I/O (read and write) 
+[3045] File I/O (ﬁle pointer) 
+[3046] TurtlePage 
+3
+8
+20
+28
+35
+45
+55
+59Click on titles 
+--- Page 3 ---
+TRY - EXCEPTION 
+3PYTHON CODING 
+TRY-EXCEPTION 
+
+--- Page 4 ---
+Try-Except 
+When a code performs an invalid operation (eg. trying to cast a variable containing letters to 
+integer), it will terminate the program with an error code. Errors commonly comes from user 
+entering invalid input data. Instead of ending the program abruptly, you can handle the error in your 
+code. Try-except allows you to do that. 
+                      try: 
+                      except: 
+4PYTHON CODING 
+TRY-EXCEPTION 
+run codes that might cause error here… 
+run codes to respond to error here… Indent with tab 
+
+--- Page 5 ---
+Try-Except 
+Example: 
+num = input("Enter an integer: ") 
+try:
+num = int(num) 
+print("You did it!") 
+except: 
+print("Oh dear, I cannot cast that!") 
+print("The program continues…") 
+Screen output 
+Enter an integer: 10
+You did it! 
+The program continues… 
+Enter an integer: ten
+Oh dear, I cannot cast that! 
+The program continues… if this causes an error, it jumps to except 
+whether there is an error or not, 
+the program will continue 
+5PYTHON CODING 
+TRY-EXCEPTION 
+
+--- Page 6 ---
+Try-Except 
+It is also valid to place your codes in this way. It will have the same results. 
+Whichever code causes an error will make it jump to except immediately.
+num = input("Enter an integer: ") 
+try:
+       num = input("Enter an integer: ") 
+num = int(num) 
+print("You did it!") 
+except: 
+print("Oh dear, I cannot cast that!") 
+print("The program continues…") 
+6PYTHON CODING 
+TRY-EXCEPTION 
+this code can be shifted in as well 
+
+--- Page 7 ---
+Try-Except 
+You can make you program robust but enforcing user to key in 
+valid data. Below is an example. 
+while True: 
+try:
+num = input("Enter an integer from 1 to 10: ") 
+num = int(num) 
+if num >= 1 and num <= 10: 
+break 
+else: 
+print("Number out of range. Try again.") 
+except: 
+print("Invalid entry. Try again.") 
+print("You did it!") 
+Enter an integer from 1 to 10: 0
+Number out of range. Try again. 
+Enter an integer from 1 to 10: five
+Invalid entry. Try again. 
+Enter an integer from 1 to 10: 5
+You did it! 
+7PYTHON CODING 
+TRY-EXCEPTION 
+Screen output 
+
+--- Page 8 ---
+FUNCTION 
+with parameters 
+8PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+
+--- Page 9 ---
+Must I code using functions? 
+You are learning coding to understand and write real ‑world applications. Writing code as 
+functions is NOT OPTIONAL .  Real applications are complex, and functions are essential 
+for debugging, teamwork, maintenance, readability, and reuse. Skipping them may work 
+for small exercises, but it is unsustainable in professional practice. 
+It is INCORRECT PRACTICE to write your entire program in one main block and only later 
+try to rearrange it into functions.  The correct approach is to design your code structure 
+with functions from the start and progressively build them up. This approach helps you 
+break down programs, no matter how complex, and allows you to develop and test them 
+progressively. 
+The curriculum will begin with small functions. Over time, your main code will shrink and 
+naturally evolve into a structured program built around functions. 
+9PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+
+--- Page 10 ---
+Function 
+A function is also called a method. It is group of 
+codes that can be executed whenever needed 
+simply by calling the function name. A function can 
+also call other functions. 
+When do you create functions? As a guide, these are 
+some common reasons: 
+1.To recycle group of codes that are executed 
+repeatedly. 
+2.To help in designing your program by breaking 
+into smaller tasks, each task can be a function or 
+a group of functions. 
+3.To make bigger program easier to read, debug 
+and maintain/update. 
+4.To enable teamwork by distributing tasks in the 
+form of creating various functions. 
+10PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+Digital Calendar 
+Set time 
+Set alarm Set date Check date and 
+time to sound 
+alarm Keep running the 
+time/date Selection 
+Menu Example of how you can break your program into tasks 
+which can be written as functions 
+
+--- Page 11 ---
+Function 
+To build a function, ﬁrstly, you need to deﬁne the function. You give it any name following the same 
+rules of naming a variable. Your program can then call it anytime (and any number of times) to 
+execute the codes in it. 
+11PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+codes here # defining the function. function will not execute until it is called 
+def myfunction ( optional parameters  ):
+# calling the function 
+myfunction() Indent with tab 
+when the function is called, it will program will go into the 
+function to run the codes. When done, it will return back to 
+the same place to resume other codes. 
+
+--- Page 12 ---
+Function 
+In a program ﬁle, the top section is 
+where you place all the imports, 
+followed by all the function 
+deﬁnitions and then the "main" codes 
+where the program begin execution. 
+# all function definitions 
+define function1 
+define function2 
+define function3 
+…
+# main 
+Execution of your 
+codes starts here # library imports 
+import … program file 
+12PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+We call the section where your 
+code starts running the main
+
+--- Page 13 ---
+Function 
+Simple function 
+A simple function has no input parameters nor any return value. That means it can perform 
+its task without needing any information provided nor send back any results when it is 
+called. 
+Example 
+# print hello world 
+def myfunction(): 
+print("Hello World!") 
+# main 
+myfunction() 
+Hello World! 
+13PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+Screen output Name a function in any style as long as you follow 
+the variable naming rules. 
+For examples, you can call it myfunction , 
+MyFunction , myFunction or my_function . Python 
+programmers like to use underscores to separate 
+multiple words for easy reading. They are usually 
+named according to the task they perform. 
+
+--- Page 14 ---
+14PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+Function 
+Function accessing variables in main 
+A function can search for variables in the main. The variables are termed Global variables. 
+Example 
+# print a variable 
+def print_variable(): 
+print("The name is", name )
+# main 
+name  = "Barney" 
+print_variable() 
+The name is Barney Screen output 
+
+--- Page 15 ---
+Function 
+Function with parameters 
+It is good practice to use Local variables for modular design of functions instead of Global 
+variables. Function can have input parameters. They are local variables which exists only when the 
+function is called. 
+Example 
+# display area of a square (provide the length) 
+def print_area( length ):
+print("Area of square is", length *length , "sqm") 
+# main 
+print_area(4) 
+Area of square is 16 sqm 
+15PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+Screen output The value 4 is passed to length. length  is a local 
+variable which exists only within the function. 
+Once the function has completed running its 
+codes, it will cease to exist and recreated upon 
+the next call. 
+We call the value 4 the argument  and the 
+function variable length  the parameter .
+
+--- Page 16 ---
+Function 
+Function with parameters 
+You can also pass variable values (also called arguments) to function parameters. 
+Example 
+# display area of a square (provide the length) 
+def print_area( length ):
+print("Area of square is", length *length , "sqm") 
+# main 
+sqrlength  = 4 
+print_area( sqrlength )
+16Area of square is 16 sqm PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+Screen output Value of sqrlength , which is 4, is passed 
+to variable length of the function 
+
+--- Page 17 ---
+Function 
+Function with parameters 
+You can have multiple parameters in your function. Separate them with commas. 
+Example 
+# display the area of a rectangle (provide the length and breadth) 
+def print_area( length , breadth ):
+print("Area of rectangle is", length *breadth , "sqm") 
+# main 
+rect_length = 4
+rect_breadth = 5
+print_area( rect_length , rect_breadth )
+17Area of square is 16 sqm PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+Screen output the values are passed to the 
+parameters in order 
+
+--- Page 18 ---
+Function 
+Function with parameters 
+You can use the same variable name in the main and in your functions. They are diﬀerent variables 
+even though they have the same name. 
+Example 
+# display the area of a square 
+def print_area( length ):
+print("Area of square is", length *length , "sqm") 
+# main 
+length  = 4 
+print_area( length )
+18Area of square is 16 sqm PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+Screen output 
+Value of length in main , which is 4, is 
+passed to variable length of the function. 
+
+--- Page 19 ---
+Function 
+Function with parameters 
+You can create variables within a function. They are created every time the function is called and you 
+will be gone once the function call ends. Hence, you can only use them within the function. 
+ 
+Example 
+# display the area of a square 
+def print_area(length): 
+area = length*length 
+print("Area of square is", area, "sqm") 
+# main 
+sqrlength = 4 
+print_area(sqrlength) 
+19Area of square is 16 sqm PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+Screen output variable area is created every time 
+the function is called and will 
+disappear when the function ended. 
+
+--- Page 20 ---
+20PYTHON CODING 
+FUNCTION WITH PARAMETERS 
+TypeError: 
+You when receive the a type error message pertaining to function as shown below, it 
+means the number of arguments provided while calling the function doesn’t match its 
+number of parameters. 
+TypeError: func() missing n required positional argument 
+TypeError: func() takes n positional arguments but m was given 
+Below shows an example: 
+def func(a, b): 
+... 
+func(1) mismatched number of arguments and parameters 
+
+--- Page 21 ---
+FUNCTION 
+with return values 
+21PYTHON CODING 
+FUNCTION WITH RETURN VALUES 
+
+--- Page 22 ---
+Function 
+Function with return value 
+Function can also perform some operations and return the result. 
+The calling program will then have to receive the result. 
+Example 
+# calculate area of a rectangle and return the result 
+def find_area(length, breadth): 
+area = length * breadth 
+return area 
+# main 
+result  = find_area(2, 3) 
+print("Area of rectangle is", result , "sqm") 
+Area of rectangle is 6 sqm 
+22PYTHON CODING 
+FUNCTION WITH RETURN VALUES 
+Screen output The calculated area is returned and saved to variable result. 
+If you forget a return command, result  will be a value None (meaning no value) 
+
+--- Page 23 ---
+Function: 
+Function with multiple return values 
+Function can also return multiple values separated by commas. 
+You can receive them with same number of variables when calling the function. 
+Example 
+# calculate the area and perimeter of a rectangle and return the results 
+def find_area_perimeter(length, breadth): 
+area = length * breadth 
+perimeter = 2 * (length + breadth) 
+return  area, perimeter 
+# main 
+rect_area , rect_perimeter = find_area_perimeter(2, 3) 
+print("Area of rectangle is", rect_area , "sqm") 
+print("Perimeter of rectangle is", rect_perimeter , "m") 
+Area of rectangle is 6 sqm 
+Perimeter of rectangle is 10 m 
+23PYTHON CODING 
+FUNCTION WITH RETURN VALUES 
+Screen output the return values will be passed to the variables in order 
+
+--- Page 24 ---
+Function: 
+Function with multiple return values 
+You can receive multiple returned results with a single variable. The variable will become a tuple. A tuple is like a list, 
+except that when created, it cannot be amended. You can cast it to list as shown below. 
+Example 
+# calculate the area and perimeter of a rectangle and return the results 
+def find_area_perimeter(length, breadth): 
+area = length * breadth 
+perimeter = 2 * (length + breadth) 
+return  area, perimeter 
+# main 
+results = find_area_perimeter(2, 3) 
+print(“Results as tuple:", results )
+results  = list( results  )
+print("Results as list:", results )
+print("Area of rectangle is", results[0] , "sqm") 
+print("Perimeter of rectangle is", results[1] , "sqm") Results as tuple: (6, 10) 
+Results as list: [6, 10] 
+Area of rectangle is 6 sqm 
+Perimeter of rectangle is 10 m 
+24PYTHON CODING 
+FUNCTION WITH RETURN VALUES 
+Screen output the return values will be passed to the variable as a tuple 
+
+--- Page 25 ---
+Function: 
+Once a return is executed in a function, it will leave the function and the function call ended. 
+Example 
+# check if x is bigger than y 
+def is_bigger(x, y): 
+if x > y: 
+ print(x, "is bigger than", y) 
+ return True 
+print(x, "is not bigger than", y) 
+return False 
+# main 
+result = is_bigger(5, 4) 
+print(result) 5 is bigger than 4 
+True once a return is executed, the function call will end and 
+the remaining codes in the function will not be run 
+25PYTHON CODING 
+FUNCTION WITH RETURN VALUES 
+Screen output 
+
+--- Page 26 ---
+Example 
+# Function (has a parameter x)
+def change( x):
+    x = 1 
+    print("Inside function, x is changed to", x)
+# main (has a variable x)
+x = 0 
+print("Before calling function, x is", x)
+change( x)
+print("After calling function, x is still", x)Before calling function, x is 0 
+Inside function, x is changed to 1 
+After calling function, x is still 0 Passing Value to Function Parameter: 
+A function parameter or variable created inside a function can have the same name as  a 
+variable outside the but they will be treated as diﬀerent variables. Changing the one inside 
+a function will not aﬀect the one outside. Variables in the main are call global variables 
+and those in a function are called local variables .
+26PYTHON CODING 
+FUNCTION WITH RETURN VALUES 
+Screen output This x is not the same x as the main variable although 
+they have the same name. Any change will not affect 
+the x outside the function. 
+
+--- Page 27 ---
+Example 
+# Function has a parameter listy
+def change(listy): 
+    listy[0] = 1 
+    print("Inside function, listy is changed to", listy) 
+# main has a variable listx
+listx = [7, 8, 9] 
+print("Before calling function, listx is", listx) 
+change(listx) 
+print("After calling function, listx is", listx) Before calling function, listx is [7, 8, 9] 
+Inside function, listy is changed to [1, 8, 9] 
+After calling function, listx is [1, 8, 9] Passing Address to Function Parameter: 
+When passing a variable that contains a group of values (eg. a list ) to a function 
+parameter, a memory address of where the values are stored is being passed instead. 
+Changing the values inside the function will aﬀect the original variable since they go to the 
+same address to read and change the values. 
+27PYTHON CODING 
+FUNCTION WITH RETURN VALUES 
+Screen output listx passed a memory address to 
+listy. When listy change the value at 
+that address, listx will see the change Memory address: 
+9223808113 
+7
+8
+9
+
+--- Page 28 ---
+Function: 
+A function can also call other functions. This allows you to break down large task into smaller tasks. 
+Example 
+# function to find perimeter of a rectangle 
+def find_perimeter(x, y): 
+return 2 * (x + y) 
+# function to find area of a rectangle 
+def find_area(x, y): 
+return x * y 
+# function to find area and perimeter of a rectangle 
+def calculate(x, y): 
+area = find_area(x, y) 
+perimeter = find_perimeter(x, y) 
+return area, perimeter 
+# call the method and display the returned value 
+result = calculate(4, 5) 
+print(result) 20 18 
+28PYTHON CODING 
+FUNCTION WITH RETURN VALUES 
+Screen output call other functions 
+
+--- Page 29 ---
+2D LIST 
+29PYTHON CODING 
+2D LIST 
+
+--- Page 30 ---
+2D List 
+A list can be 2 or more dimensional. 
+2D lists are useful for representing a table of data. 
+Below shows an example of a 2D list .
+# example of a 2D list. 
+text = [ ['A', 'B', 'C'] , ['D', 'E', 'F'] ] 
+# accessing individual values 
+print( text[0][0] , text[0][1] , text[0][2] ) 
+print( text[1][0] , text[1][1] , text[1][2] ) A B C 
+D E F 
+    0 1  2 
+0  A B C 
+1  D E F text[row][column ]
+30PYTHON CODING 
+2D LIST 
+Screen output list 1 list 2 
+a list of lists 
+
+--- Page 31 ---
+2D List 
+Creating a 2D list 
+How to create a list [ ["A", "A", "A"] , ["A", "A", "A"] ] ?
+Method 1: declare and assign 
+mylist = [ ["A", "A", "A"] , ["A", "A", "A"] ] 
+Method 2: using for-loops 
+mylist = [ ["A" for i in range(3)] for j in range( 2) ]
+Method 3: using append 
+mylist = [ ] 
+for row in range(2): 
+    innerlist = [ ] 
+    for col in range(3): 
+innerlist .append( "A")
+    mylist .append( innerlist ) 
+31PYTHON CODING 
+2D LIST 
+
+--- Page 32 ---
+2D List 
+Assigning / editing values in a list 
+Similar to normal list, treat each item as a variable. 
+# 2D list 
+num = [ [10, 20, 30]  ,  [ 30, 4 , 50] ] 
+# editing a individual values 
+print(num[1][2]) 
+num[1][2] = num[1][2]  + 10 
+print(num[1][2]) 50
+60
+32PYTHON CODING 
+2D LIST 
+Screen output 
+
+--- Page 33 ---
+2D List 
+Iterating through the list using for-loop 
+Note that 2D list can have inner lists of diﬀerent lengths .
+Below shows how you display each item at a time. 
+# 2D list with inner lists of different lengths 
+text = [ ["A", "B", "C"] , ["D", "E"] , ["F", "G", "H", "I" ] ] 
+# iterate through each row 
+for r in range ( len(text) ): 
+# for each row, iterate through the column 
+for c in range( len(text[r]) ): 
+print(text[r][c]) A
+B
+C
+D
+E
+F
+G
+H
+I
+33PYTHON CODING 
+2D LIST 
+Screen output 
+
+--- Page 34 ---
+2D List 
+Iterating through the list using for-loop 
+Below shows how you display a list in a table format. 
+# 2D list with inner lists of different lengths 
+text = [ ["A", "B", "C"] , ["D", "E", "F"] , ["G", "H", "I"] ] 
+# iterate through each row 
+for r in range ( len(text) ): 
+# for each row, iterate through the column 
+for c in range( len(text[r]) ): 
+print(text[r][c] ,  end="" )
+print() ABC 
+DEF 
+GHI 
+34PYTHON CODING 
+2D LIST 
+Screen output 
+end="" prevents cursor going to next line 
+after this print command 
+go to new line after printing every row 
+
+--- Page 35 ---
+2D List 
+Iterating through the list using for-loop 
+This is an alternative shortcut to display a list in table format. 
+# 2D list with inner lists of different lengths 
+text = [ ["A", "B", "C"] , ["D", "E", "F"] , ["G", "H", "I"] ] 
+# iterate through each row 
+for r in range ( len(text) ): 
+print(*text[r] ,  sep="" )ABC 
+DEF 
+GHI 
+35PYTHON CODING 
+2D LIST 
+Screen output 
+since each row is a list, display the row list 
+using * with sep="" (i.e. without space) 
+
+--- Page 36 ---
+DICTIONARY 
+36PYTHON CODING 
+DICTIONARY 
+
+--- Page 37 ---
+DICTIONARY 
+Dictionary is a list of key-value pairs that enables quick access to values. 
+The keys must be unique as any repetition in key will be overwritten by the last occurrence. 
+# example of a dictionary 
+dictionary = { "John": 15 , "Mary": 13 , "Bobby": 14 } 
+# access individual value with key 
+print( dictionary[ "John" ] ) 
+print( dictionary[ "Mary" ] ) 
+print( dictionary[ "Bobby" ] ) 
+15
+13
+14left side is the key 
+right side is the value 
+note the curly brackets used 
+note the square brackets used when accessing. 
+you cannot use value  to search for key.
+e.g. dictionary[15] is an error and will not give you "John" 
+37PYTHON CODING 
+DICTIONARY 
+Screen output 
+
+--- Page 38 ---
+DICTIONARY 
+The keys and values of a dictionary can be of mixed data type. 
+Key must be a single data whereas value can be any data type including list. 
+# example of a dictionary with mixed data type 
+dictionary = { "John": 15 ,  13: "Mary" , 1.2: True , 15: ["age", 7] } 
+# access individual value with key 
+print( dictionary['John'] ) 
+print( dictionary[13] ) 
+print( dictionary[1.2] ) 
+print( dictionary[15] ) 
+print( dictionary[15][0] ) 
+38PYTHON CODING 
+DICTIONARY 
+15
+Mary 
+True 
+['age', 7] 
+age Screen output 
+dictionary[15] is a list, 
+hence, [0] is the value at 
+index 0. 
+
+--- Page 39 ---
+DICTIONARY 
+If you need to declare many values in your dictionary, you can format it as shown below for 
+better view. 
+# example of proper formatting of dictionary with many values for clarity 
+dictionary = { 
+"John": 15, 
+"Mary": 13, 
+"Bobby": 14, 
+"Danny": 11, 
+"Smith Bob": 13, 
+"Marcus": 11, 
+"Marcus Lim": 12, 
+}
+39PYTHON CODING 
+DICTIONARY 
+
+--- Page 40 ---
+DICTIONARY – Creating/Adding/Updating a dictionary 
+How to create a dictionary { "John": 15 , "Mary": 13 , "Bob": 14 } ?
+Method 3: using update() 
+dictionary = { } 
+dictionary. update(  { "John" : 15 } )
+dictionary. update(  { "Mary" : 13, "Bob" : 14 } ) Method 1: declare and assign 
+dictionary = { "John": 15 , "Mary": 13 , "Bob": 14 } 
+Method 2: using assignment 
+dictionary = { } 
+dictionary[ "John" ] = 15 
+dictionary[ "Mary" ] = 13 
+dictionary[ "Bob" ] = 14 
+40PYTHON CODING 
+DICTIONARY 
+E.g. If "John“ exists, it will be replaced, otherwise it will be added. 
+Hence, this method is also for adding and updating. 
+You can add or update a set of values using this method 
+
+--- Page 41 ---
+DICTIONARY - Editing values in a dictionary 
+You can perform various operations on each item the same way as a variable 
+depending on its data type. 
+# dictionary variable 
+dictionary = { "John": 15 , "Mary": 13 , "Bob": 14 } 
+# example of editing a value in a dictionary 
+print( dictionary[ "John" ] ) 
+dictionary[ "John" ] = dictionary[ "John" ] + 1 
+print( dictionary[ "John" ] ) 15
+16
+41PYTHON CODING 
+DICTIONARY 
+Screen output 
+
+--- Page 42 ---
+DICTIONARY - Deleting an item from a dictionary 
+Use pop() or del command to remove an item. pop() also returns the value of the popped 
+item. You can use a variable to save the popped value (optional). 
+dictionary = { "John": 15 , "Mary": 13 , "Bob": 14 } 
+Method 1: Using pop() 
+removed = dictionary .pop ( "Mary" ) 
+print(dictionary) 
+print(removed) 
+Method 2: Using del
+del dictionary["Mary"] 
+print(dictionary) 
+{'John': 15 , 'Bob': 14} 
+13
+42PYTHON CODING 
+DICTIONARY 
+Screen output 
+If you don't 
+need the 
+popped value 
+then you do 
+not need to 
+use variable 
+to save it 
+{'John': 15 , 'Bob': 14} Screen output 
+
+--- Page 43 ---
+DICTIONARY – Looping through a dictionary 
+Dictionary does not have any index. You can only get a list of its keys and iterate through 
+it. 
+Example 
+dictionary = { "John": 15 , "Mary": 13 , "Bob": 14 } 
+Method 1: 
+for key in dictionary:        
+print(key, dictionary[key]) 
+Method 2: 
+for key, value in dictionary .items() :        
+print(key, value) John 15 
+Mary 13 
+Bob 14 
+43PYTHON CODING 
+DICTIONARY 
+Screen output This will take each key-value 
+pair from the dictionary and 
+place them in the variables 
+key and value 
+
+--- Page 44 ---
+DICTIONARY – Looping through a dictionary 
+You can get a list of its keys or values using keys() and values() commands. Note that 
+in Python's implementation, items in a dictionary may not always be stored in the 
+order of its creation. 
+Example 
+dictionary = { "John": 15 , "Mary": 13 , "Bob": 14 } 
+keylist = list( dictionary .keys() ) 
+for i in range( len(keylist) ) 
+print( keylist[i] ) 
+valueslist = list( dictionary .values() ) 
+for i in range( len(valuelist) ) 
+print( valuelist[i] ) John 
+Mary 
+Bob cast the return value to a 
+list so that you can 
+manipulate it like a list. 
+44PYTHON CODING 
+DICTIONARY 
+Screen output 
+15
+13
+14
+
+--- Page 45 ---
+DICTIONARY 
+Checking key existence 
+You can check if a key exists in a dictionary using the in  or not in operator. 
+Example 
+dictionary = { "John": 15 , "Mary": 13 , "Bob": 14 } 
+if "Mary" in dictionary: 
+   print("Mary found") 
+else: 
+   print("Mary not found") 
+if "Sam" in dictionary: 
+   print("Sam found") 
+else: 
+   print("Sam not found") 
+if "Kate" not in dictionary: 
+   print("Kate not found") 
+else: 
+   print("Kate found") Mary found 
+Sam not found 
+Kate not found 
+45PYTHON CODING 
+DICTIONARY 
+Screen output 
+
+--- Page 46 ---
+FILE IO 
+read and write 
+46PYTHON CODING 
+FILE IO 
+
+--- Page 47 ---
+WARNING 
+File IO can be a dangerous operation. If you are careless, you can delete or 
+corrupt your ﬁles on the hard disk or you can create a ﬁle so huge that it 
+exceeded your disk space and cause your computer to crash. 
+Hence, if your program doesn't seem to run as expected (eg. looping too 
+long), terminate it immediately to check the codes. 
+Students caught performing malicious or mischievous acts will be 
+suspended immediately and be subjected to disciplinary actions. 
+47PYTHON CODING 
+FILE IO 
+
+--- Page 48 ---
+FILE INPUT OUTPUT 
+In order to save data permanently, you need to write them into ﬁles for subsequent retrieval. A ﬁle can be 
+written in text format or binary format . A text format can be opened by any editor like note pad or word but a 
+binary ﬁle requires interpretation to be readable. We will only be handling text format in this course. 
+To open a ﬁle for reading and writing the following command is used: 
+with open( filename  ,  mode  ) as myfile  :
+eg. "myfile.txt" file variable 
+Mode Description 
+"r" Read only (default). File must already exist. 
+"r+" Read+Write. File must already exist. 
+"w" Write only. Overwrites if file exists, otherwise creates a new file for writing. 
+"w+" Read+Write. Overwrites if file exists, otherwise creates a new file for writing. 
+"a" Appending. If file does not exist, new file will be created. 
+"a+" Append+Read. If file does not exist, new file will be created. 
+48PYTHON CODING 
+FILE IO 
+
+--- Page 49 ---
+FILE INPUT OUTPUT 
+Some commonly used commands for ﬁle operations are shown below. 
+We will focus on readline() and write() for subsequent examples. 
+Command Description 
+read(n) Read at most n characters form the file. Reads till end of file if n is negative or None. 
+readline(n) Read and return one line from the file. Reads in at most n bytes if specified. 
+readlines(n) Read and return a list of lines from the file. Reads in at most n bytes/characters if specified. 
+write(string) Write a string to the file. 
+writelines(lines) Write a list of lines to the file. 
+tell() Returns the current file position (in bytes). 
+seek(position) Go to file position (in bytes). 
+49PYTHON CODING 
+FILE IO 
+
+--- Page 50 ---
+FILE INPUT OUTPUT 
+Writing 
+# Example of creating and writing a file 
+with open( "myfile.txt",  "w" ) as f : 
+ f.write( "ABC ")
+ f.write( "DEF\n" )
+ f.write( "GHI\n" )
+A ﬁle named "myﬁle.txt" will be created and the contents are: "\n" represents a newline character "w" sets file to write mode 
+myfile.txt 
+ABCDEF 
+GHI the newline character is invisible in the file 
+but the next character will appear on the next line 
+50PYTHON CODING 
+FILE IO 
+
+--- Page 51 ---
+FILE INPUT OUTPUT 
+Writing 
+For eﬃciency reason, a ﬁle write operation sometimes stays in the memory after the 
+code is run and may only be executed after some amount of write operations is 
+performed. To force the write operation to be executed immediately after the code, use 
+ﬂush() after the write command. 
+# Example of creating and writing a file 
+with open( "myfile.txt",  "w" ) as f : 
+ f.write("ABC") 
+ f.flush() 
+51PYTHON CODING 
+FILE IO 
+
+--- Page 52 ---
+FILE INPUT OUTPUT 
+Reading 
+# Example of reading the file created in the previous slide 
+with open( "myfile.txt" ,  "r" ) as f : 
+        while True: 
+                text = f. readline() 
+                if text == "" : 
+                        break 
+         else: 
+                        print(text) 
+ABCDEF 
+GHI"r" sets file to read-only mode 
+when text is "" (null), it means that the end of the file is reached 
+52PYTHON CODING 
+FILE IO 
+myfile.txt 
+ABCDEF 
+GHI 
+Screen output 
+Each line read contains a 
+newline character so the cursor 
+will go to the next line. As print() 
+command itself adds another 
+newline, a blank row appears the file will start from the top and read the next line when 
+readline() is used (it will remember its last location) 
+
+--- Page 53 ---
+FILE INPUT OUTPUT 
+Reading 
+rstrip()  command can remove any newline or whitespace characters appearing at the end of a string. 
+# Example of reading the file created in the previous slide 
+with open( "myfile.txt" ,  "r" ) as f : 
+        while True: 
+                text = f.readline(). rstrip() 
+                if text == "" : 
+                        break 
+         else: 
+                        print(text) 
+ABCDEF 
+GHI
+53PYTHON CODING 
+FILE IO 
+myfile.txt 
+ABCDEF 
+GHI 
+Screen output rstrip() will remove the newline character 
+
+--- Page 54 ---
+FILE INPUT OUTPUT 
+Appending 
+Use "a" mode to open a ﬁle for appending. 
+# Example of appending the file created in the previous slide 
+with open( "myfile.txt" ,  "a" ) as f : 
+f.write("JKL") 
+myfile.txt 
+ABCDEF 
+GHI 
+JKL myfile.txt 
+ABCDEF 
+GHI 
+after writing before writing 
+54PYTHON CODING 
+FILE IO 
+"a" sets file to append mode 
+write() command will thus write to the end of file 
+
+--- Page 55 ---
+FILE INPUT OUTPUT 
+Opening multiple ﬁles 
+You can open multiple ﬁles by nesting the open command. Below shows an example: 
+# Example of opening multiple files together to copy the contents 
+with open ( "file1.txt" ,  "r" ) as f1 : 
+with open ( "file2.txt" , "w" ) as f2: 
+while True: 
+text = f1.readline() 
+if text == "": 
+break 
+else: 
+f2.write( text ) 
+55PYTHON CODING 
+FILE IO 
+nest the open commands to keep both files opened 
+
+--- Page 56 ---
+FILE IO 
+ﬁle pointer 
+56PYTHON CODING 
+FILE POINTER 
+
+--- Page 57 ---
+FILE INPUT OUTPUT 
+File Pointer 
+When you open the ﬁle, there is a ﬁle pointer pointing to the beginning of the ﬁle. As you read or 
+write, the ﬁle pointer changes to where your last character was read or written. 
+File pointer 
+starts here myfile.txt 
+ABC 
+DEF 
+myfile.txt  
+ABC 
+DEF 
+myfile.txt 
+ABC 
+DEF 
+After reading a 
+character ("A"),  
+file pointer will 
+shift to the next 
+character myfile.txt 
+ABC 
+DEF 
+GHI After reading 
+a line 
+("ABC\n"), 
+file pointer 
+will shift here After writing a 
+line without 
+newline ("GHI"), 
+file pointer will 
+shift here 
+57PYTHON CODING 
+FILE POINTER 
+If file is opened for 
+append, file 
+pointer starts here myfile.txt 
+ABC 
+DEF 
+
+--- Page 58 ---
+FILE INPUT OUTPUT 
+File Pointer 
+You can shift the position of a ﬁle pointer manually. 
+Use tell() to save the current pointer position into a variable. The value indicates the 
+number of bytes (one character is one byte in ASCII code format) 
+   position = f. tell() 
+Use seek() to shift the ﬁle pointer to a position 
+    f.seek( position )
+Note that any invisible characters such as the newline character will also be considered 
+as a character when reading, writing and seeking. 
+58PYTHON CODING 
+FILE POINTER 
+
+--- Page 59 ---
+FILE INPUT OUTPUT 
+Replacing 
+A ﬁle is a series of bytes stored continuously on a hard disk. You are not able to insert a data between 
+existing content or replace one string with a longer string without rewriting the ﬁle. A simple (but 
+ineﬃcient way) is to read the whole ﬁle, amend the contents and re-write the while ﬁle with the updated 
+content. 
+You can, however, replace a character with another character (or a string with another string with the 
+same length). Below shows an example. 
+myfile.txt 
+ABC 
+DEF 
+myfile.txt 
+ABXYDEF
+f.seek(2) 
+moves the 
+file pointer 
+here. f.write("XY") 
+Overwrites "C\n" and the 
+file pointer goes to the 
+next character ("D"). 
+Note that the "DEF" 
+appears in the first row 
+as the newline character 
+is being replaced. 
+59PYTHON CODING 
+FILE POINTER 
+
+--- Page 60 ---
+TURTLE
+60PYTHON CODING 
+TURTLE 
+
+--- Page 61 ---
+TURTLE 
+Turtle is a Python library that for 
+creating graphics and text on a 
+virtual canvas. The onscreen pen 
+used for drawing is called 
+the turtle.
+The diagram on the right shows 
+the coordinate system of turtle 
+with a canvas width of 600 pixels 
+by height 400 pixels. 
+61PYTHON CODING 
+TURTLE 
+
+--- Page 62 ---
+TURTLE 
+To start a turtle program, there are 4 main steps: 
+1.Set up a canvas (the screen for drawing). Online IDE may have a default canvas 
+without creating. But you will need to do this step in order to control the screen. 
+2.Set up a turtle pen. It is the cursor on the screen that draws as it moves. You can 
+have more than one pen with diﬀerent attributes (colour, line width, etc). 
+3.Start drawing with turtle commands. 
+The following slides will demonstrate with examples. 
+62PYTHON CODING 
+TURTLE 
+
+--- Page 63 ---
+TURTLE 
+Step 1: Set up drawing canvas 
+Example 
+import turtle 
+# create a canvas 
+myscreen = turtle.Screen()  
+# set canvas size (width by height in pixels) 
+myscreen .setup( 400 , 300 ) 
+ 
+# set the background colour 
+myscreen .bgcolor( "light blue" )
+63PYTHON CODING 
+TURTLE 
+Screen output 
+400 pixels 300 pixels 
+
+--- Page 64 ---
+TURTLE 
+64PYTHON CODING 
+TURTLE 
+Description Command Example (using variable 'myscreen') 
+Create a canvas (drawing screen) turtle.Screen() myscreen = turtle.Screen()           
+Set the screen size in pixel 
+method 1: Using pixels 
+method 2: Using ratio to desktop screen 
+.setup( width , height )
+.setup( ratio , ratio )                     
+myscreen.setup( 400 , 400 ) 
+myscreen.setup( 0.5, 0.5 )         
+Set colour mode for RGB (1 or 255) .colormode( mode ) myscreen.colormode( 1 ) 
+myscreen.colormode( 255 ) 
+Set background colour of screen using name .bgcolor( colour name  )  
+.bgcolor( r , g, b  )  myscreen.bgcolor( "white" )  
+myscreen.bgcolor( 25, 255, 79 )  
+Clear the screen .clear() myscreen.clear()      
+Clear the screen and reset the all settings to default .reset() myscreen.reset()         
+Force the screen to update after drawing if it doesn’t .update() myscreen.update() 
+Returns the window width in pixel .window_width() w = myscreen.window_width()        - variable w is an integer 
+Returns the window height in pixel .window_height() h = myscreen.window_height()       - variable h is an integer Commands for Canvas Setting 
+
+--- Page 65 ---
+TURTLE 
+Step 2: Set up turtle pen 
+Example 
+continue from previous example 
+# create a turtle pen 
+mypen = turtle.Turtle() 
+# set drawing colour 
+mypen. color(  "black" ) 
+65PYTHON CODING 
+TURTLE 
+
+--- Page 66 ---
+TURTLE 
+66PYTHON CODING 
+TURTLE 
+Description Command Example (using variable mypen )
+Create a pen. You can have multiple  pens turtle.Turtle()       mypen = turtle.Turtle()       
+Set the pen shape: 
+square / arrow / circle / turtle / triangle / classic .shape( shape name ) mypen.shape( "turtle" ) 
+Set the pen stroke size in pixel .pensize( size ) mypen.pensize( 5 ) 
+Set the animation speed when the pen moves: 
+1 (slow) to 10 (fast)  /  0 - instant .speed( speed  ) mypen.speed( 10 ) 
+Set drawing colour 
+method 1: using colour name 
+method 2: using RGB (mode 255 - value 0 to 255) 
+.color( colour name  )
+.color( r , g , b )
+mypen.color( "green" ) 
+mypen.color( 150 , 12 , 122 ) 
+Show pen on screen .showturtle() mypen.showturtle() 
+Hide pen on screen .hideturtle() mypen.hideturtle() 
+Set the pen down so that it will draw as it moves .pendown() mypen.pendown() 
+Set the pen up so that it will not draw as it moves .penup() mypen.penup() 
+Returns the pen position in screen coordinate .position() x, y = mypen.position()           - variables x and y are floats 
+Returns the direction of the pen in degree .heading() degree = mypen.heading()     - variable degree is a float Commands for Pen Setting 
+
+--- Page 67 ---
+TURTLE 
+Step 3: Draw with commands 
+Example 
+continue from previous example 
+# create a turtle pen 
+mypen. forward( 100 )
+mypen. left( 90 )
+mypen. forward( 50 )
+# (OPTIONAL) force the screen to update if it doesn’t 
+# this may happen on certain IDE when using input() command 
+myscreen. update() 
+67PYTHON CODING 
+TURTLE 
+Screen output 
+the pen starts at the centre of 
+the canvas, which is (0, 0) 
+
+--- Page 68 ---
+TURTLE 
+68PYTHON CODING 
+TURTLE 
+Description Command Example (using variable mypen )
+Move pen forward .forward( pixel ) mypen.forward( 150 ) 
+Move pen backward .backward( pixel ) mypen.backward( 100 ) 
+Move pen to a specific point stated .goto( x , y ) mypen.goto( 200, -300 ) 
+Move pen to a specific x coordinate .setx( pixel )      mypen.setx( -400 )      
+Move pen to a specific y coordinate .sety( pixel )    mypen.sety( 400 )    
+Turn pen to its left by certain degree (anti-clockwise) .left( degree  ) mypen.left( 17 ) 
+Turn pen to its right by certain degree (clockwise) .right( degree  ) mypen.right( 400 ) 
+Turn pen to a specific degree .setheading( degree  ) mypen.setheading( 45 ) 
+Move pen in a circle with stated radius in pixel .circle( radius  ) mypen.circle( 50 ) 
+Move pen in an arc with stated radius and degree .circle( radius  , degree  ) mypen.circle( 100 , 180 ) 
+Move pen in a polygon with specified number of sides. 
+The polygon is within an arc with stated radius and degree. .circle( radius  , degree  , sides  ) mypen.circle( 100 , 180 , 3 ) Commands for Drawing 
+
+--- Page 69 ---
+TURTLE 
+In Turtle, you cannot ﬁll a shape that has already been drawn. You must indicate that you are going 
+to perform ﬁlling before drawing the shapes. 
+There are 4 steps for ﬁlling shapes with colours: 
+1.Set outline and ﬁll colours (this overwrites existing pen colour) using .color() and .ﬁllcolor()
+2.Enable ﬁll using begin_ﬁll() 
+3.Draw all the shapes that you want to be ﬁlled with these colours. Whenever a closed shape is 
+formed, it will be ﬁlled. 
+4.Disable ﬁll when you are done using end_ﬁll() and all closed shapes will be ﬁlled. 
+69PYTHON CODING 
+TURTLE 
+Description Command Example (using variable mypen )
+Set outline colour .color( outline colour ) mypen.color( "black“ ) 
+Set fill colour .fillcolor( fill colour ) mypen.fillcolor( "yellow“ ) 
+Start the filling process .begin_fill() mypen.begin_fill() 
+End the filling process .end_fill() mypen.end_fill() Commands for Filling 
+
+--- Page 70 ---
+TURTLE 
+Example 
+70PYTHON CODING 
+TURTLE 
+Screen output 
+import turtle 
+# create a canvas 
+myscreen = turtle.Screen() 
+myscreen.setup( 400 , 300 )     
+myscreen.bgcolor( "light grey" ) 
+# create pen 
+mypen = turtle.Turtle() 
+mypen.pensize(6) 
+# set draw a circle with blue stroke and fill it with yellow 
+mypen.color( "blue“ ) 
+mypen.fillcolor( "yellow" ) 
+mypen.begin_fill() 
+mypen.circle(50) 
+mypen.end_fill() 
+
+--- Page 71 ---
+TURTLE 
+You can also place text on turtle canvas. You need to set the text style when calling the write() 
+function to place the text. 
+71PYTHON CODING 
+TURTLE 
+Description Command Example (using variable mypen )
+Set the font style .write(text, font, align) style = ( "Arial" , 30 , "bold" )              - set font, size and attribute and save to a variable 
+pen.write( "Hello!" , font=style , align="center" )  - call the write function to place the text 
+Font (examples)  : Courier / Arial / Calibri / Times / Comic Sans MS / Monoton / Calligraphr 
+Attribute              : normal / bold / italic / bold italic 
+Align                   : left / center / right 
+Commands for Text 
+
+--- Page 72 ---
+TURTLE 
+Colour reference 
+72PYTHON CODING 
+TURTLE 
+Name RedGreen Blue Name RedGreen Blue Name RedGreen Blue
+AliceBlue 240 248 255 DarkOrange 255 140 0 IndianRed 205 92 92
+AntiqueWhite 250 235 215 DarkOrchid 153 50 204 ivory 255 255 240
+aquamarine 127 255 212 DarkRed 139 0 0 khaki 240 230 140
+azure 240 255 255 DarkSalmon 233 150 122 lavender 230 230 250
+beige 245 245 220 DarkSeaGreen 143 188 143 LavenderBlush 255 240 245
+bisque 255 228 196 DarkSlateBlue 72 61 139 LawnGreen 124 252 0
+black 0 0 0 DarkSlateGray 47 79 79 LemonChiffon 255 250 205
+BlanchedAlmond 255 235 205 DarkSlateGrey 47 79 79 LightBlue 173 216 230
+blue 0 0 255 DarkTurquoise 0 206 209 LightCoral 240 128 128
+BlueViolet 138 43 226 DarkViolet 148 0 211 LightCyan 224 255 255
+brown 165 42 42 DeepPink 255 20 147 LightGoldenrod 238 221 130
+burlywood 222 184 135 DeepSkyBlue 0 191 255 LightGoldenrodYellow 250 250 210
+CadetBlue 95 158 160 DimGray 105 105 105 LightGray 211 211 211
+chartreuse 127 255 0 DimGrey 105 105 105 LightGreen 144 238 144
+chocolate 210 105 30 DodgerBlue 30 144 255 LightGrey 211 211 211
+coral 255 127 80 firebrick 178 34 34 LightPink 255 182 193
+CornflowerBlue 100 149 237 FloralWhite 255 250 240 LightSalmon 255 160 122
+cornsilk 255 248 220 ForestGreen 34 139 34 LightSeaGreen 32 178 170
+cyan 0 255 255 gainsboro 220 220 220 LightSkyBlue 135 206 250
+DarkBlue 0 0 139 GhostWhite 248 248 255 LightSlateBlue 132 112 255
+DarkCyan 0 139 139 gold 255 215 0 LightSlateGray 119 136 153
+DarkGoldenrod 184 134 11 goldenrod 218 165 32 LightSlateGrey 119 136 153
+DarkGray 169 169 169 gray 190 190 190 LightSteelBlue 176 196 222
+DarkGreen 0 100 0 green 0 255 0 LightYellow 255 255 224
+DarkGrey 169 169 169 GreenYellow 173 255 47 LimeGreen 50 205 50
+DarkKhaki 189 183 107 grey 190 190 190 linen 250 240 230
+DarkMagenta 139 0 139 honeydew 240 255 240 magenta 255 0 255
+DarkOliveGreen 85 107 47 HotPink 255 105 180 maroon 176 48 96
+
+--- Page 73 ---
+TURTLE 
+Colour reference 
+73PYTHON CODING 
+TURTLE 
+Name RedGreen Blue Name RedGreen Blue Name RedGreen Blue
+MediumAquamarine 102205170 pink 255192203 WhiteSmoke 245245245
+MediumBlue 0 0205 plum 221160221 yellow 255255 0
+MediumOrchid 18685211 PowderBlue 176224230 YellowGreen 15420550
+MediumPurple 147112219 purple 16032240 
+MediumSeaGreen 60179113 red 255 0 0 
+MediumSlateBlue 123104238 RosyBrown 188143143 
+MediumSpringGreen 0250154 RoyalBlue 65105225 
+MediumTurquoise 72209204 SaddleBrown 1396919 
+MediumVioletRed 19921133 salmon 250128114 
+MidnightBlue 2525112 SandyBrown 24416496 
+MintCream 245255250 SeaGreen 4613987 
+MistyRose 255228225 seashell 255245238 
+moccasin 255228181 sienna 1608245 
+NavajoWhite 255222173 SkyBlue 135206235 
+navy 0 0128 SlateBlue 10690205 
+NavyBlue 0 0128 SlateGray 112128144 
+OldLace 253245230 SlateGrey 112128144 
+OliveDrab 10714235 snow 255250250 
+orange 255165 0 SpringGreen 0255127 
+OrangeRed 25569 0 SteelBlue 70130180 
+orchid 218112214 tan 210180140 
+PaleGoldenrod 238232170 thistle 216191216 
+PaleGreen 152251152 tomato 2559971 
+PaleTurquoise 175238238 turquoise 64224208 
+PaleVioletRed 219112147 violet 238130238 
+PapayaWhip 255239213 VioletRed 20832144 
+PeachPuff 255218185 wheat 245222179 
+peru 20513363 white 255255255 
