@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lab - Challenges</title>
+    <meta name="description" content="View and explore challenges and units.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>The Lab</h2>
+                <p>Challenges & Units</p>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search challenges...">
+            </div>
+            <div class="sidebar-nav" id="sidebarNav">
+                <!-- Loading State -->
+                <div class="loading">Fetching challenges...</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div id="challengeDetails" class="challenge-details empty-state">
+                <div class="empty-icon">🚀</div>
+                <h2 style="margin-bottom: 12px">Select a challenge</h2>
+                <p style="color: var(--text-secondary)">Choose a challenge from the sidebar to view its details.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
