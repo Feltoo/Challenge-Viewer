@@ -151,10 +151,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const chName = challenge.name || challenge.title || `Challenge ${challenge.id || ''}`;
         const chStep = challenge.step || challenge.order || '';
         
+        let pdfLink = '';
+        const uId = parseInt(unit.id || challenge.unit || 0);
+        
+        if (uId >= 2001 && uId <= 2017) pdfLink = '/notes/foundation.pdf';
+        else if (uId >= 3031 && uId <= 3039) pdfLink = '/notes/advanced_1.pdf';
+        else if (uId >= 3040 && uId <= 3047) pdfLink = '/notes/advanced_2.pdf';
+        else if (uId >= 3048 && uId <= 3054) pdfLink = '/notes/advanced_3.pdf';
+
+        let notesHtml = pdfLink ? `<a href="${pdfLink}" target="_blank" class="notes-btn">📚 View Notes</a>` : '';
+
         let html = `
             <div class="challenge-header">
                 <div class="meta-unit">Unit: ${unitIdStr} - ${unitName}</div>
-                <h1 class="challenge-title">Challenge: ${chStep ? chStep + ' - ' : ''}${chName}</h1>
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
+                    <h1 class="challenge-title" style="margin:0;">Challenge: ${chStep ? chStep + ' - ' : ''}${chName}</h1>
+                    ${notesHtml}
+                </div>
                 ${chStep ? `<div class="step-badge">You are on Step ${chStep}</div>` : ''}
             </div>
             <div id="stepsContainer"><div class="loading">Loading details...</div></div>
