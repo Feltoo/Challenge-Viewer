@@ -1,0 +1,2127 @@
+--- Page 1 ---
+THE LAB CODER
+Advanced Notes Part 1  (update  10 Sep 2026)
+Copyright © by The Lab Education Centre Pte Ltd. All rights reserved. Unauthorised sharing, distribution or use of materials from this document is strictly prohibited.
+1
+Notes: http://tinyurl.com/TheLabAdvanced1
+
+--- Page 2 ---
+Python
+Python is a widely-used, interpreted, object-oriented, and high-level programming 
+language with dynamic semantics, used for general-purpose programming.
+It was created by Guido van Rossum and was ﬁrst released on 20 February, 1991.
+Some popular software development that had use Python extensively:
+Spotify, Google, Instagram, YouTube, Pinterest,
+Battleﬁeld 2, Eve Online, World of Tanks, The Sims 4
+2
+PYTHON CODING
+
+--- Page 3 ---
+Content
+3
+PYTHON CODING
+[3031] Print
+[3032] Variable
+[3032] Operators
+[3033] Type Casting
+[3033] Input
+[3034] If Statement
+[3035] For-Loop
+[3036] Good Programming Habits
+[3037] While-Loop
+[3038] List Basics
+[3038] List Manipulation
+[3039] String Manipulation
+Miscellaneous
+Practices and IDEs
+Page
+4
+9
+18
+25
+28
+37
+50
+57
+62
+67
+79
+88
+95
+110
+Click on titles
+
+--- Page 4 ---
+PRINT
+4
+PYTHON CODING
+PRINT
+
+--- Page 5 ---
+PRINT
+Print command is to display value or text on the screen. 
+Below is the syntax of a print command.
+put the data to display here
+print(        )
+5
+PYTHON CODING
+PRINT
+Use single quote ( ' ) or double quote( " ) around the text you want to print.
+Use single or double quotes (i.e. 'Hello world' or "Hello world")
+print(  "Hello world." )
+
+--- Page 6 ---
+PRINT
+What if you need to display quotes in your text (e.g. Score "A" is good) ? 
+print( "Score "A" is good" )
+6
+PYTHON CODING
+PRINT
+Screen output
+print( "Score \"A\" is good" )
+Score "A" is good
+this will cause an error because the second quote is taken as a closing quote 
+for the first and the third quote taken as the opening quote for the last
+Add a backslash (\) to mark a quote as part of the text as shown:
+add a backslash before the text quotes
+
+--- Page 7 ---
+COMMENTING
+As you write your program, you may want to insert a remark. 
+This can be done by using the hash sign #.
+Examples:
+# display hello world
+print( "Hello world!" )
+print( "Hello world!" )  # display hello world
+7
+PYTHON CODING
+PRINT
+this line is your comment and it will not be run as a code
+you can also put your comment beside a code but it is 
+recommended to use the above format instead
+
+--- Page 8 ---
+8
+PYTHON CODING
+PRINT
+SyntaxError:
+You when receive the a value error message show below, it means the structure of your 
+code is invalid.
+SyntaxError: invalid syntax
+For example, if you missed closing a bracket or a quote of a print statement, it will 
+generate a syntax error.
+print("Hello, world)
+missing closing quote "
+
+--- Page 9 ---
+VARIABLE
+9
+PYTHON CODING
+VARIABLE
+
+--- Page 10 ---
+VARIABLE
+A variable is used to store a value which you need to reference subsequently. 
+To create a variable, give it a name and assign a value to it.
+Examples:
+your variables
+values assigned to the variables
+10
+PYTHON CODING
+VARIABLE
+age = 8
+fullname = "Harry James Potter"
+Note that it is always the RIGHT value saved to the LEFT.
+
+--- Page 11 ---
+VARIABLE NAME
+The name of a variable must begin with either a letter or an underscore "_" . 
+Followed by any letters, digits or underscores. No spaces are allowed.
+Examples of valid names
+name
+num4
+first_name
+_length
+_1stPlayer
+_02
+i
+Examples of invalid names
+first  name
+<- space not allowed
+1st_Player
+<- first character must be letter or underscore
+circle.radius
+<- only letters, digits and underscore are allowed
+Use meaningful names for variables. By convention, programmers use lower case for variables 
+(although upper case is allowed) and words are separated with underscore.
+11
+PYTHON CODING
+VARIABLE
+
+--- Page 12 ---
+VARIABLE DATA TYPE
+Variable can store different data type. 
+Below are examples of 4 basic data types. 
+Data Type    Examples
+string        'Hello World!'
+      "ABC 888"
+integer      123 , -123
+float
+      1.23 , -5.0
+boolean      True   False
+string(text). Must have open and close quotes.
+You can use either single quotes '  ' or double quotes "  "
+whole numbers (no decimal points)
+numbers with decimal points
+only have True or False values
+12
+PYTHON CODING
+VARIABLE
+
+--- Page 13 ---
+PRINTING VARIABLE (using comma separator)
+Example:
+number = 8
+print( number )
+print( "The number is" , number )
+Without quotes, 
+this is recognized as a variable
+Within quotes '', 
+this is recognized as a text
+8
+The number is 8
+13
+PYTHON CODING
+VARIABLE
+Screen output
+Place a comma between items.
+A space will appear in the output.
+
+--- Page 14 ---
+PRINTING VARIABLE
+You can use comma (,) or plus sign (+) to join diﬀerent items in print command. A comma (,) will 
+add a space between the items.
+print( name , "has" , number , "dogs." )
+Join items using commas. Each comma will add a space to the output.
+14
+PYTHON CODING
+VARIABLE
+Alan has 2 dogs.
+Screen output
+print( name + "has" , number , "dogs." )
+Alanhas 2 dogs.
+Join strings using plus sign. Plus sign does not add a space.
+Alan has 2 dogs.
+name = "Alan"   # variable stores string 
+number = 2       # variable stores integer
+print( name + " has" , number , "dogs." )
+Space within quotes will appear in output.
+Alanhas 2 dogs.
+print( name +   "has" , number      , "dogs." )
+Spaces outside the quotes have no effect on the output.
+
+--- Page 15 ---
+PRINTING VARIABLE (using f-string)
+Example:
+number = 8
+print( number )
+print( f"The number is {number}" )
+Place variable inside 
+curly brackets
+8
+The number is 8
+15
+PYTHON CODING
+VARIABLE
+Screen output
+Precede with an f followed 
+by single or double quote 
+(no space in between) 
+
+--- Page 16 ---
+PRINTING VARIABLE
+Printing variables with f-string formatting is another option that is easier.
+print( f"{name} has {number} dogs." )
+16
+PYTHON CODING
+VARIABLE
+Alan has 2 dogs.
+Screen output
+name = "Alan"   # variable stores string 
+number = 2       # variable stores integer
+
+--- Page 17 ---
+VARIABLE DATA TYPE
+In Python, the same variable can store values of diﬀerent data types while the 
+program is running.
+Example:
+number = 8
+print( "number stores integer" , number )
+number = "eight"
+print( "Now number stores string", number )
+number stores integer 8
+Now number stores string eight
+17
+PYTHON CODING
+VARIABLE
+Screen output
+
+--- Page 18 ---
+OPERATORS
+18
+PYTHON CODING
+OPERATORS
+
+--- Page 19 ---
+ARITHMETIC OPERATORS
+You can apply arithmetic operations on numbers and numeric variables (integer and ﬂoat)
+Operator
+Description
+Example
+x = 5 and y = 2
++
+Addition
+    x + y 
+     (ans: 7)
+-
+Subtraction
+    x - y 
+     (ans: 3)
+-
+Negative
+      -x            (ans: -5)
+*
+Multiplication
+    x * y
+     (ans: 10)
+/
+Division
+    x / y
+     (ans: 2.5)
+%
+Modulus (remainder)
+    x % y      (ans: 1)
+//
+Floor division (quotient)
+    x // y 
+     (ans: 2)
+**
+Exponentiation (the power of)
+    x ** y      (ans: 25)
+=
+Equal (assignment)
+total = x + y   (ans: 7)
+( )
+Parentheses
+  (x + 2) * y    (ans: 14)
+19
+PYTHON CODING
+OPERATORS
+
+--- Page 20 ---
+ARITHMETIC OPERATORS
+Changing a variable value
+Example:
+counter = 1
+print( counter )
+<- this will display 1
+print( counter + 1 )
+<- this will take the value of counter and add 1 to it and
+     it will display the result 2 but counter itself is not changed. 
+print( counter ) 
+       <- counter is not changed so this will display 1
+counter = counter + 1     <- saves the result back into counter. this increases counter by 1
+print( counter )
+     <- counter is changed so it will display 2
+20
+PYTHON CODING
+OPERATORS
+
+--- Page 21 ---
+ARITHMETIC OPERATORS
+You can use the following shortcuts for arithmetic operations
+Operator
+Example
+x = 5 and y = 2
++=
+x += y   is the same as    x = x + y     (x is increased by y and x becomes 7)
+-=
+x -= y    is the same as    x = x - y      (x is decreased by y and x becomes 3)
+*=
+x *= y    is the same as    x = x * y      (x is multiply by y and x becomes 10)
+/=
+x /= y     is the same as    x = x / y      (x is divided by y and x becomes a float 2.5)
+21
+PYTHON CODING
+OPERATORS
+
+--- Page 22 ---
+ARITHMETIC OPERATORS
+You can treat integer as part of ﬂoat (but not the other way round).  
+22
+PYTHON CODING
+OPERATORS
+In an operation, when there is a mix of integers and ﬂoats, the result will be a ﬂoat.
+x = 5
+y = 2.0
+z = x + y
+print(z)
+7.0
+Screen output
+x is integer
+y is float
+z is float
+Example:
+x = 5
+y = 2
+z = x + y
+print(z)
+7
+Screen output
+x is integer
+y is integer
+z is integer
+
+--- Page 23 ---
+ARITHMETIC OPERATORS
+You can treat integer as part of ﬂoat (but not the other way round).  
+Note that when you divide integers, the result will be a ﬂoat.
+23
+PYTHON CODING
+OPERATORS
+Example:
+x = 4
+y = 2
+z = x / y
+print(z)
+2.0
+Screen output
+x is integer
+y is integer
+z is float because of the division
+x = 5
+y = 2
+z = x / y
+print(z)
+2.5
+Screen output
+x is integer
+y is integer
+z is float because of the division
+
+--- Page 24 ---
+STRING OPERATORS
+You can also perform operations on strings.
+Operator
+Description
+Example
++
+Concatenate 2 strings
+"ABC" + "DEF"                                      (result: 'ABCDEF')
+*
+Repeat string by integer
+"ABC" * 3                                             (result: 'ABCABCABC')
+( )
+Prioritise with Parentheses
+("A" + "B") * 2     vs    "A" + ("B" * 2)     (result: 'ABAB' vs 'ABB')
+=
+Assign
+newstring = "A" + "B" * 3                      (result: 'ABBB')
+Example:
+salutation = "Mrs."
+name = "Tay"
+print( "Name:", salutation + name )   <- this will display Name: Mrs.Tay
+24
+PYTHON CODING
+OPERATORS
+
+--- Page 25 ---
+TYPE CASTING
+25
+PYTHON CODING
+TYPE CASTING
+
+--- Page 26 ---
+CASTING
+In order to perform certain operations, you need to cast them to the right data type. 
+For example, you can only divide numbers and not string.
+value = 9
+value= str(value)
+value = int(value)
+value = float(value)
+The variable named value is assigned an integer 
+This changes it to a string '9'
+This changes it to a float 9.0
+To cast to float, value must contain only digits or with one 
+decimal point (e.g. 9, 9.0, 9.123, etc) 
+This changes it back to integer 9
+To cast to integer, value must contain only digits
+26
+PYTHON CODING
+TYPE CASTING
+
+--- Page 27 ---
+CASTING
+Note that casting does not change the variable, it only takes the 
+value and return the cast value. Below shows an example.
+num = 9
+print( num )
+print( float(num) )
+print( num )
+num = float(num)
+print( num )
+The variable num is assigned an integer 9
+As num remains as integer, it displays 9
+This displays 9
+float(num) converts the value and returns 9.0 but does not change the variable num
+It displays the result 9.0
+To change the variable type, you need to assign it back.
+Now num is a float type with value 9.0
+27
+PYTHON CODING
+TYPE CASTING
+
+--- Page 28 ---
+INPUT
+28
+PYTHON CODING
+INPUT
+
+--- Page 29 ---
+INPUT
+Input command allows the user to enter data from the keyboard. When user hit the enter 
+key, it will return the data entered as a STRING. Use a variable to save the value. 
+text message to display on the screen
+input(     )
+Example:
+name = input( "Enter your name: " )
+print(name)
+29
+PYTHON CODING
+INPUT
+Screen output
+Enter your name: Bert
+Bert 
+Entered by user
+Use a variable to 
+save the input value
+
+--- Page 30 ---
+INPUT CASTING
+As input command always returns a string, you need to perform casting to the right 
+datatype before performing operations (e.g. if you need to do arithmetic operation, then 
+cast it to integer or ﬂoat).
+Example:
+num = input("Enter number: ") 
+num = int( num )
+num = num * 2
+print("Double the number is", num)
+30
+PYTHON CODING
+INPUT
+Screen output
+Enter number: 5
+Double the number is 10
+Entered by user
+Cast to integer first to 
+do math operation
+
+--- Page 31 ---
+INPUT DISPLAY
+For input command, you cannot use comma to join diﬀerent strings or variables to form 
+the display message. You need to use the plus operator (+). You can only add up strings in 
+this case. Hence, cast any non-string value to strings. 
+Example:
+num = 3
+name = input( "Enter name of player #"  +  str(num)  +  " : " )
+num is an integer so cast to string in 
+order to join up all the text
+31
+PYTHON CODING
+INPUT
+Screen output
+Enter name of player #3: 
+to join 3 parts of text with +, all of them has to be strings
+
+--- Page 32 ---
+INPUT DISPLAY
+Alternatively, you can use f-string formatting as shown below
+Example:
+num = 3
+name = input( f"Enter name of player #{num}: " )
+Place variable in curly brackets. 
+Casting is not required.
+32
+PYTHON CODING
+INPUT
+Screen output
+Enter name of player #3: 
+
+--- Page 33 ---
+33
+TypeError:
+You when receive the a type error message show below, it means that you are trying to 
+perform an operation that is not valid for the current value type.
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+The most common occurrence of this error is to forget to cast variables to numerical 
+types after the input. Below shows an example:
+n = input("Enter a num:")
+n = n - 1
+need to cast n to integer or ﬂoat
+PYTHON CODING
+INPUT
+
+--- Page 34 ---
+ValueError:
+You when receive the a value error message show below, it means you are trying to 
+perform an invalid casting of type.
+34
+ValueError: invalid literal for int() with base 10
+The most common occurrence of this error is to forget to cast variables to numerical 
+types after the input. Below shows an example:
+name = input("Enter a name:")
+name = int(name)
+name is a not a number so it cannot be cast to integer
+PYTHON CODING
+INPUT
+
+--- Page 35 ---
+SPLITTING STRING
+You can enter multiple values in a single row and separate them using split()  command.
+Example:
+name = input( "Enter 3 words: " )
+text1, text2, text3 = name.split( )
+print(text1)
+print(text2)
+print(text3)
+35
+PYTHON CODING
+INPUT
+Screen output
+Enter 3 words: red green blue
+red
+green
+blue 
+The command will search for spaces in 
+the string and split it into different 
+strings
+you need to have exactly the same 
+number of variables as the split strings
+
+--- Page 36 ---
+SPLITTING STRING
+You can use a separator string with the split()  command to split as well.
+Example:
+name = input( "Enter a string: " )
+text1, text2, text3 = name.split( "xx" )
+print(text1)
+print(text2)
+print(text3)
+36
+PYTHON CODING
+INPUT
+Screen output
+Enter a string: RedxxGreenxxBlue
+Red
+Green
+Blue
+The command will search for 
+"xx" in the string and split it 
+into different strings
+you need to have exactly the same 
+number of variables as the split strings
+
+--- Page 37 ---
+IF STATEMENT
+37
+PYTHON CODING
+IF STATEMENT
+
+--- Page 38 ---
+CONDITION
+A condition is a statement that can only be True or False (call boolean) and nothing 
+else. It is similar to a Yes and No. If it returns something else, it is not a condition.
+Are the following conditions (i.e. the answer to them is either a True or False)?
+mom is at home
+she is taller than him
+her age is the same as his brother's
+the cat is hungry and there is no food
+I have $5
+$3 + $2
+x is greater than y
+x is equal to 5
+(x + y) is less than 10
+x - 2
+38
+PYTHON CODING
+IF STATEMENT
+
+--- Page 39 ---
+IF STATEMENT
+An if-statement checks if a condition (or multiple conditions) is true, then it will execute 
+some codes.
+You can have many elif  in an if  block. When a condition is True and the codes are 
+executed, any remaining elif and else will be skipped.
+codes belonging to the
+ condition must be 
+indented with tab
+39
+PYTHON CODING
+IF STATEMENT
+if condition 1:
+run these codes    <- executed when condition1 is True
+elif condition 2:
+run these codes    <- executed when condition 1 is False and condition 2 is True
+else:
+run these codes    <- executed when conditions 1 & 2 are False
+
+--- Page 40 ---
+COMPARISON OPERATORS
+40
+PYTHON CODING
+IF STATEMENT
+Comparison Operators
+x is equal to y
+x == y
+x is not equal to y
+x != y
+x is smaller than y
+x < y
+x is smaller or equal to y
+x <= y
+x is greater than y
+x > y
+x is greater or equal to y
+x >= y
+x+1 is less than or equal to y/4
+(x + 1) <= (y / 4)
+x is divisible by y
+(x % y) == 0
+
+--- Page 41 ---
+IF STATEMENT
+What will be displayed in the following?
+x = 3
+if x < 5:
+print("x is smaller than 5")
+else:
+print("x is not smaller than 5")
+41
+PYTHON CODING
+IF STATEMENT
+
+--- Page 42 ---
+IF STATEMENT
+What will be displayed in the following?
+x = 3
+y = 6
+if x < 5:
+print("x is smaller than 5") 
+elif y > 5:
+print("y is greater than 5") 
+else:
+print("x is not smaller and y is not greater than 5") 
+42
+PYTHON CODING
+IF STATEMENT
+
+--- Page 43 ---
+IF STATEMENT
+What will be displayed in the following?
+x = 3
+y = 6
+if x < 5:
+print("x is smaller than 5") 
+if y > 5:
+print("y is greater than 5") 
+else:
+ print("y is not greater than 5") 
+43
+PYTHON CODING
+IF STATEMENT
+
+--- Page 44 ---
+Multiple conditions: AND / OR / NOT
+if condition 1 and condition 2:
+if condition 1 or condition 2:
+if not condition 1:
+if (condition 1 or condition 2) and condition 3:
+do when both conditions are True 
+do when either one or both conditions are True 
+do when condition 1 is False 
+do when conditions 1 or 2 is True and 3 is also True
+44
+PYTHON CODING
+IF STATEMENT
+run these codes
+run these codes
+run these codes
+run these codes
+
+--- Page 45 ---
+BOOLEAN
+You can make a variable a boolean data type so that it stores either True or False.
+Example:
+night = False
+if night:
+    print("Time to rest")
+else:
+    print("Time to play")
+    
+45
+PYTHON CODING
+IF STATEMENT
+this variable is a boolean when you assign 
+it True or False (first letter capital).
+You can also use "if night == True"
+
+--- Page 46 ---
+Example:
+if condition 1:
+if condition 2:
+else:
+else:
+ if condition 3:
+else:
+46
+PYTHON CODING
+IF STATEMENT
+run codes A
+run codes B
+run codes C
+run codes D
+indented with tab
+Nested If
+indented with tab
+Condition 1
+Condition 2
+Condition 3
+Which codes will 
+run (A/B/C/D) ?
+1
+False
+False
+False
+2
+False
+False
+True
+3
+False
+True
+False
+4
+False
+True
+True
+5
+True
+False
+False
+6
+True
+False
+True
+7
+True
+True
+False
+8
+True
+True
+True
+
+--- Page 47 ---
+Example:
+if condition 1:
+if condition 2:
+else:
+else:
+ if condition 3:
+else:
+47
+PYTHON CODING
+IF STATEMENT
+run codes A
+run codes B
+run codes C
+run codes D
+indented with tab
+Nested If
+indented with tab
+Condition 1
+Condition 2
+Condition 3
+Which codes will 
+run (A/B/C/D) ?
+1
+False
+False
+False
+D
+2
+False
+False
+True
+C
+3
+False
+True
+False
+D
+4
+False
+True
+True
+C
+5
+True
+False
+False
+B
+6
+True
+False
+True
+B
+7
+True
+True
+False
+A
+8
+True
+True
+True
+A
+
+--- Page 48 ---
+RANGE
+Checking range is common in coding. 
+Below are examples showing how you check for continual ranges using and operator:
+48
+PYTHON CODING
+IF STATEMENT
+checking if num is in range 1,2,3,4
+checking if num is in range 0,1,2,3,4,5
+checking if num is in range 0,1,2,3,4
+checking if num is in range 1,2,3,4,5
+Examples: 
+given num is an integer
+if num > 0 and num < 5:
+   …
+if num >= 0 and num <= 5:
+   …
+if num >= 0 and num < 5:
+   …
+if num > 0 and num <= 5:
+   …   
+
+--- Page 49 ---
+RANGE
+Checking range is common in coding. 
+Below are examples showing how you check for disjoint ranges using or operator:
+49
+PYTHON CODING
+IF STATEMENT
+checking if num is in one of the ranges:
+4 and below or 11 and above
+Examples:
+given num is an integer
+if num < 5 or num > 10:
+   …
+if num <= 5 or num >= 10:
+   …
+if num <= 5 or num > 10:
+   …
+if num < 5 or num >= 10:
+   …   
+checking if num is in one of the ranges:
+5 and below or 10 and above
+checking if num is in one of the ranges:
+5 and below or 11 and above
+checking if num is in one of the ranges:
+4 and below or 10 and above
+
+--- Page 50 ---
+LOOP
+for-loop with range()
+50
+PYTHON CODING
+FOR-LOOP
+
+--- Page 51 ---
+FOR-LOOP
+A for-loop is  used to repeat  some
+codes for certain range. 
+It uses a variable to store the count 
+as it loops.
+                    for variable in range(start, end, step):
+51
+PYTHON CODING
+FOR-LOOP
+codes belonging to the loop must be 
+indented with tab
+run these codes
+variable will start counting
+from this number
+variable will stop counting at 
+end-1 (it will not reach end)
+for each count, add step to count
+
+--- Page 52 ---
+Examples
+Run these codes to see what is displayed.
+for i in range(0, 10, 1):
+print(i)
+for i in range(5, 10, 2):
+print(i)
+for i in range(10, 1, -1):
+print(i)
+for i in range(5, -7, -3):
+print(i)
+for i in range(3, 10):
+print(i)
+for i in range(5):
+print(i)
+As it loops, i will count 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+52
+PYTHON CODING
+FOR-LOOP
+As it loops, i will count 5, 7, 9 (add 2 each count)
+This is a countdown. You must indicate negative step for countdown.
+As it loops, i will count 10, 9, 8, 7, 6, 5, 4, 3, 2
+As it loops i will count 5, 2, -1, -4 (add -3 each count)
+If you indicate only 2 values, they will be taken as the start and end 
+with default step 1. As it loops, i will count 3, 4, 5, 6, 7, 8, 9
+If you indicate only 1 value, it will be taken as the end with 
+default start 0 and step 1. As it loops, i will count 0, 1, 2, 3, 4
+
+--- Page 53 ---
+FOR-LOOP
+You can use variables in the loop range.
+Examples:
+start = 10
+end = 50
+step = 3
+for i in range(start, end, step):
+print(i)
+53
+PYTHON CODING
+FOR-LOOP
+
+--- Page 54 ---
+Nested For-Loop
+Example:
+for i in range(3):
+print( "---- i is", i )
+for k in range(1, 4):
+print( "k is", k )
+use a different variable 
+for each inner loop
+Observe the indentation (spacing in front of the codes).
+---- i is 0
+k is 1
+k is 2
+k is 3
+---- i is 1
+k is 1
+k is 2
+k is 3
+---- i is 2
+k is 1
+k is 2
+k is 3
+54
+PYTHON CODING
+FOR-LOOP
+Screen output
+
+--- Page 55 ---
+Breaking For-Loop
+You can use the break command to exit a for-loop anytime.
+Example:
+for i in range(10):
+if i == 5:
+break
+else:
+print(i)
+0
+1
+2
+3
+4
+55
+PYTHON CODING
+FOR-LOOP
+Screen output
+
+--- Page 56 ---
+01234
+56
+PYTHON CODING
+FOR-LOOP
+Screen output
+Printing in a single row
+Each time when you use print(), the cursor will go to the next line. 
+Below shows an example of how you can use a string variable to print 
+values in a single row. 
+Method 1: using a variable
+line = ""
+for i in range(5):
+    line = line + str(i)   # append to variable
+print(line)                   
+Method 2: using print with end
+for i in range(5):
+    print( i, end="" ) # keep the cursor on the same row after printing
+
+--- Page 57 ---
+GOOD PROGRAMMING HABITS
+57
+PYTHON CODING
+GOOD PROGRAMMING HABITS
+
+--- Page 58 ---
+It is important to develop good programming habits to make you codes well organized and readable 
+because you are likely to be working as a team and your teammates will read your codes. It will also be 
+beneﬁcial to yourself should you need to come back and read a code that you have written a long time 
+back. Below are 2 versions of the same codes. 
+Which of the following is easier to understand (they are the same codes)?
+Version 2:
+# set length and breadth of rectangle 1
+length1 = 25
+breadth1 = 50 
+# set length and breadth of rectangle 2
+length2 = 12
+breadth2 = 40
+# check which rectangle has a bigger area
+if (length1 * breadth1) > (length2 * breadth2):
+print("Rectangle 1 has a bigger area")
+else: 
+print("Rectangle 2 has a bigger area")
+Version 1
+a= 25
+b = 50 
+c   = 12
+d =40
+If   (a*b )>  (  c* d):
+       print  ("1")
+else:
+print("  2")
+58
+PYTHON CODING
+GOOD PROGRAMMING HABITS
+
+--- Page 59 ---
+Use MEANINGFUL NAMES  for variables
+Version 2:
+# set length and breadth of rectangle 1
+length1 = 25
+breadth1 = 50 
+# set length and breadth of rectangle 2
+length2 = 12
+breadth2 = 40
+# check which rectangle has a bigger area
+if (length1 * breadth1) > (length2 * breadth2):
+print("Rectangle 1 has a bigger area")
+else: 
+print("Rectangle 2 has a bigger area")
+59
+PYTHON CODING
+GOOD PROGRAMMING HABITS
+
+--- Page 60 ---
+Add short COMMENTS  to them using '#'
+Version 2:
+# set length and breadth of rectangle 1
+length1 = 25
+breadth1 = 50 
+# set length and breadth of rectangle 2
+length2 = 12
+breadth2 = 40
+# check which rectangle has a bigger area
+if (length1 * breadth1) > (length2 * breadth2):
+print("Rectangle 1 has a bigger area")
+else: 
+print("Rectangle 2 has a bigger area")
+60
+PYTHON CODING
+GOOD PROGRAMMING HABITS
+
+--- Page 61 ---
+Add LINE BREAKS to break the codes into parts
+Version 2:
+# set length and breadth of rectangle 1
+length1 = 25
+breadth1 = 50 
+# set length and breadth of rectangle 2
+length2 = 12
+breadth2 = 40
+# check which rectangle has a bigger area
+if (length1 * breadth1) > (length2 * breadth2):
+print("Rectangle 1 has a bigger area")
+else: 
+print("Rectangle 2 has a bigger area")
+61
+PYTHON CODING
+GOOD PROGRAMMING HABITS
+
+--- Page 62 ---
+LOOP
+while-loop
+62
+PYTHON CODING
+WHILE-LOOP
+
+--- Page 63 ---
+WHILE-LOOP
+If you do not know how many times to repeat, while-loop will be suitable 
+as it can either repeat forever or terminate upon a condition.
+       while condition:
+codes belonging to the loop
+must be indented with tab
+63
+PYTHON CODING
+WHILE-LOOP
+run these codes
+the loop will run as long as condition is True
+
+--- Page 64 ---
+WHILE-LOOP
+Example:
+What number will be displayed when you run the codes below?
+counter = 0
+while counter < 10:
+print(counter)
+counter = counter + 1
+64
+PYTHON CODING
+WHILE-LOOP
+
+--- Page 65 ---
+WHILE-LOOP (inﬁnite loop / break / continue)
+Example:
+counter = 0
+while True:
+counter = counter + 1
+if counter < 10:
+continue
+elif counter == 100:
+break
+print(counter)
+print("I am out of the while loop")
+'continue' will cause program to jump to start of loop
+'break' will cause program to exit nearest loop
+This will form an infinite loop as the condition is always True
+65
+PYTHON CODING
+WHILE-LOOP
+
+--- Page 66 ---
+Nested While-Loop
+Example:
+outer = 0
+while outer < 3:
+print( "---- outer is", outer )
+inner = 0
+while inner < 2:
+print( "inner is", inner )
+inner = inner + 1
+outer = outer + 1
+Observe the indentation (spacing in front of the codes).
+---- outer is 0
+inner is 0
+inner is 1
+---- outer is 1
+inner is 0
+inner is 1
+---- outer is 2
+inner is 0
+inner is 1
+66
+PYTHON CODING
+WHILE-LOOP
+Screen output
+
+--- Page 67 ---
+LIST
+basics
+67
+PYTHON CODING
+LIST BASICS
+
+--- Page 68 ---
+LIST
+A list is used to store a group of values. 
+Each value is accessed by an index that starts from zero.
+A list has square brackets with commas separating each value.
+                 mylist = [ value , value , value , value ]
+Index value is the position (starts from 0) and 
+mylist[ index value ] contains the value at that position.               
+68
+PYTHON CODING
+LIST BASICS
+Index (position)
+0            1            2           3
+
+--- Page 69 ---
+69
+PYTHON CODING
+LIST BASICS
+List
+To help in remembering, you can think of it as a building (list) where each level (index) has a room 
+that houses someone (value).
+value 0
+value 1
+value 2
+value 3
+0 
+1
+2
+3
+List
+value 4
+4
+List[2] = value 2
+[ index ]
+
+--- Page 70 ---
+LIST
+Example:
+# a list can contain any data types. below is a list name storing strings.
+name = [ "Colt" , "Barley" , "Dynamike" ]
+# accessing individual item
+print( name )
+print( name[0] )
+print( name[1] )
+print( name[2] )
+['Colt', 'Barley', 'Dynamike']
+Colt
+Barley
+Dynamike
+70
+PYTHON CODING
+LIST BASICS
+Screen output
+
+--- Page 71 ---
+LIST
+List length
+You can use the len() command to get the number of items in a list. It returns an integer.
+                num_of_items = len( mylist )
+The last index in a list is len( mylist ) – 1. 
+For example, if a list has 4 items, its index will run from 0 to 3 (3 is 4-1).
+71
+PYTHON CODING
+LIST BASICS
+Index (position)
+0            1          2                  len(mylist) - 1
+mylist = [ value , value , value ,   . . .    , value ]
+
+--- Page 72 ---
+LIST
+A list can store diﬀerent data types.
+# A list can contain any data types.
+mixed = [ 10 , "Colt" ,  0.56 , True ]
+[10, 'Colt', 0.56 ,True]
+10
+Colt
+0.56
+True
+# accessing individual values of a list
+print( mixed )
+print( mixed[0] )
+print( mixed[1] )
+print( mixed[2] )
+print( mixed[3] )
+print( len(mixed) )
+print( mixed[ len(mixed)-1 ] )
+72
+PYTHON CODING
+LIST BASICS
+Screen output
+4
+True
+
+--- Page 73 ---
+LIST
+Negative index
+You can also access the list using negative index starting from the end. 
+The last index is -1.
+                 mylist = [ value ,   …   , value , value , value ]
+mylist[ -1 ] contains the last value ( same as mylist[ len(mylist)-1 ] )
+73
+PYTHON CODING
+LIST BASICS
+Index (position)
+- len(mylist)                 -3          -2         -1  
+
+--- Page 74 ---
+LIST
+Example:
+# a list can contain any data types. below is a list name storing strings.
+name = [ "Colt" , "Barley" , "Dynamike" ]
+# accessing individual item
+print( name )
+print( name[-1] )
+print( name[-2] )
+print( name[-3] )
+['Colt', 'Barley', 'Dynamike']
+Dynamike
+Barley
+Colt
+74
+PYTHON CODING
+LIST BASICS
+Screen output
+
+--- Page 75 ---
+LIST – Looping through List
+List is often used with for-loop as the loop counter can be used as the index to 
+access each item.
+0 Colt
+1 Barley
+2 Dynamike
+3 Shelly
+Example
+# a list of names
+name = [ "Colt" , "Barley" , "Dynamike" , "Shelly"]
+# Method 1: looping using index (i). 
+# You can choose the range with this method.
+for i in range( len(name) ):
+print( i, name[ i ] )
+# Method 2: looping using value
+for i in name:
+print( i )
+75
+PYTHON CODING
+LIST BASICS
+Screen output
+len() in this case returns value 4.
+So i will count from 0 to 3
+Colt
+Barley
+Dynamike
+Shelly
+i is the index
+name[i] is the value
+i is the value
+
+--- Page 76 ---
+76
+PYTHON CODING
+LIST BASICS
+LIST – Looping through List
+Previously, we visualised a list as a 
+building. Now, imagine a lift beside 
+it, stopping at each ﬂoor, just like a 
+For-loop counting from 0 to the top. 
+As the lift ascends, it stores the 
+current ﬂoor number in the counter 
+variable, which acts as the index to 
+access values in the list.
+for i in range( len(LIST) ):
+print( LIST [ i ] )
+
+--- Page 77 ---
+LIST - Creating a list
+How to create a list [ 'A' , 'A' , 'A' ] ?
+Method 3: using append()
+mylist = [ ]
+for i in range (3):
+    mylist.append( 'A' )
+Method 1:  declare and assign
+mylist = [ 'A' , 'A' , 'A' ]
+Method 2:  using for-loop
+mylist = [ 'A' for i in range(3) ]
+77
+PYTHON CODING
+LIST BASICS
+you must create an empty list before appending
+number of items to create 
+number of items to create 
+
+--- Page 78 ---
+78
+PYTHON CODING
+LIST BASICS
+IndexError:
+You when receive the an index error message show below, it means you are trying to 
+access a value from a list at an invalid index. 
+IndexError: list index out of range
+Below shows an example:
+names = ['Nigel', 'Angie', 'Sam' ,'Chloe']
+print(names[4])
+index invalid (0 to 3)
+
+--- Page 79 ---
+LIST
+manipulation
+79
+PYTHON CODING
+LIST MANIPULATION
+
+--- Page 80 ---
+LIST - Appending an item to a list
+You can add an item to the end of a list by using the append() command.
+list_variable.append( item )
+Example:
+mylist = [ "Red" , "Green" , "Blue" ]
+mylist.append( "Orange" )
+print( mylist )
+['Red', 'Green', 'Blue', 'Orange']
+80
+PYTHON CODING
+LIST MANIPULATION
+Screen output
+
+--- Page 81 ---
+LIST - Deleting an item from a list
+Use the pop() command to remove at item at an index from a list. 
+The removed an item will be returned. You can use a variable to save it (optional). 
+Any items behind will be shifted up.
+Note that popping an invalid index or when the list is empty will crash the program.
+                list_variable.pop( index )
+Example:
+mylist = [ "Red" , "Green" , "Blue" ]
+removed = mylist.pop(1)
+print( mylist )
+print( removed )
+mylist.pop()
+print( mylist )
+['Red', 'Blue']
+Green
+['Red']
+81
+PYTHON CODING
+LIST MANIPULATION
+Screen output
+if you omit the index, 
+it will remove the last item
+If you don't need to save 
+the popped value, you can 
+simply use mylist.pop(1)
+
+--- Page 82 ---
+LIST - Inserting an item into a list
+You can insert an item at an index of a list using insert() command. 
+The items at the index onwards will be shifted down.
+                     list_variable.insert(index , item)
+Example:
+mylist = [ "Red" , "Green" , "Blue" ]
+mylist.insert( 1 , "Orange" )
+print(mylist)
+['Red', 'Orange', 'Green', 'Blue']
+82
+PYTHON CODING
+LIST MANIPULATION
+Screen output
+
+--- Page 83 ---
+LIST - Assigning / editing items in a list
+Treat each item in a list like a variable. You can perform variable operations on them 
+based on their data type.
+Example:
+# list variable
+num = [ 10 , 90 , 45 ]
+# example of editing a value in a list
+num[1] = num[0] + 7
+print( num )
+[10, 17, 45]
+83
+PYTHON CODING
+LIST MANIPULATION
+Screen output
+
+--- Page 84 ---
+LIST - Display
+You can display a list without the punctuations.
+Method 1:
+mylist = [ "Red" , "Green" , "Blue" ]
+print( mylist )
+print( *mylist )
+['Red', 'Green', 'Blue']
+Red Green Blue
+using * displays the content of a list
+without the punctuations
+84
+PYTHON CODING
+LIST MANIPULATION
+Screen output
+Method 2:
+mylist = [ "Red" , "Green" , "Blue" ]
+print( mylist )
+# append each value into a single string
+line = " "
+for value in mylist:
+line = line + value + "     "
+print( line )
+
+--- Page 85 ---
+LIST
+You can check if a value exists in a list using the in  or not in operator
+Example:
+mylist = [ "Green" , 123 ]
+if "Green" in mylist:
+print("found")
+if 123 in mylist:
+print("found")
+if "something" not in mylist:
+print("not found")
+found
+85
+PYTHON CODING
+LIST MANIPULATION
+Screen output
+found
+not found
+
+--- Page 86 ---
+LIST - Creating a list by splitting a string
+Example 1:
+string = "cat dog mouse"
+wordlist = string.split()
+print( wordlist )  
+Example 2:
+string = “cat"
+wordlist = string.split()
+print( wordlist )   
+86
+PYTHON CODING
+LIST MANIPULATION
+['cat', 'dog', 'mouse']
+Screen output
+split() will search for spaces in the 
+string and separate the content
+['cat']
+Screen output
+if there is no space character in the 
+string, it will just be a list of one value
+
+--- Page 87 ---
+87
+PYTHON CODING
+LIST MANIPULATION
+LIST - Finding item in a List
+You can ﬁnd the index of the ﬁrst occurrence of an item in a List using index() .
+mylist = [ "Aa" , "Bb" , "Cc" , "Dd" , "Cc" ]
+print( mylist.index("Cc") )
+this will display 2 (index of the first occurrence)
+However, index() command will crash the program if the item does not exist. 
+Hence, you need to check for existence ﬁrst using in before using it.
+mylist = [ "123" , 0 , "5Z" , 42 , "Ee" ]
+if "42" in mylist:
+    print( mylist.index("42") )
+Will the above print anything when run?
+
+--- Page 88 ---
+STRING MANIPULATION
+88
+PYTHON CODING
+STRING MANIPULATION
+
+--- Page 89 ---
+89
+PYTHON CODING
+STRING MANIPULATION
+Reading a Character from String
+String can be read in the same manner as List using index
+text = "ABCDEFG"
+print( text[0] )        this will display "A"
+print( text[4] )        this will display "E"
+len() can used to ﬁnd out the length of the string, that is number of characters (including 
+invisible ones)
+text = "ABCDEFG"
+print( len(text) )      this will display 7
+Negative index is used to read from the end of the string
+text = "ABCDEFG"
+print( text[-1] )        this will display "G"
+print( text[-3] )        this will display "E"
+<- index starts from 0
+0 1 2 3 4 5 6 
+<- index starts at -1 from the end
+-7 -6 -5 -4 -3 -2 -1 
+
+--- Page 90 ---
+90
+PYTHON CODING
+STRING MANIPULATION
+Reading a Character from String
+Similar to List, you can use a for-loop to 
+access each character
+# Method 1
+text = "Hello, world!"
+for i in range( len(text) ):
+print( text[i] )
+# Method 2
+text = "Hello, world!"
+for i in text:
+print( i )
+H
+e
+l
+l
+o
+,
+w
+o
+r
+l
+d
+!
+Screen output
+
+--- Page 91 ---
+91
+PYTHON CODING
+STRING MANIPULATION
+Extracting Substring from String
+Substring  can be extracted using range in index [ start : end+1 ]
+text = "ABCDEFG"
+print( text[3:6] )
+this will display "DEF"
+print( text[-6:-3] ) this will display "BCD"
+print( text[0:2] )
+this will display "AB" (similar to range, the end index is offset by 1)
+print( text[3:] )
+this will display "DEFG" (from start index till end)
+print( text[:3] )
+this will display "ABC" (from beginning till end index less 1)
+0 1 2 3 4 5 6 
+-7 -6 -5 -4 -3 -2 -1 
+
+--- Page 92 ---
+92
+PYTHON CODING
+STRING MANIPULATION
+Casting String to List of characters
+text = "ABCDE"
+charlist = list( text )        charlist will be ["A", "B", "C", "D", "E"]
+Converting List to String 
+stringlist = [ "A", "BCD" , "E" ]
+text = "".join( stringlist )     text will be "ABCDE"
+Note that you cannot change individual character of a string using assignment. 
+              
+text = "ABCDE"
+text[0] = "Z"       this command is INVALID as you cannot change the character in a string directly
+You may change it to a list to edit the content.
+
+--- Page 93 ---
+93
+PYTHON CODING
+STRING MANIPULATION
+Checking if a Substring exists in a String
+You can use the in operator to check if a substring exists in string
+text = "ABCDEFG"
+if "A" in text:
+print( "found" )        this will this display "found"
+if "CDE" in text:
+print( "found" )        this will this display "found"
+
+--- Page 94 ---
+94
+PYTHON CODING
+STRING MANIPULATION
+Find the position of a Substring in a String
+You can use the ﬁnd() command to ﬁnd the index of the ﬁrst occurrence of a substring in a string. It will 
+return -1 if not found. 
+Example:
+sentence = "Hello, world."
+substring = "world"
+idx = sentence.find(substring)
+if idx != -1:
+    print("Substring found")
+else:
+    print("Substring not found.")
+
+--- Page 95 ---
+MISCELLANEOUS
+95
+PYTHON CODING
+MISCELLANEOUS
+common error messages
+clear screen
+in operator
+print() with end / sep
+zﬁll()
+casting and join()
+round()
+split() / strip() / lsrtip() / rstrip()
+lower() / upper() / title() / isdigit() / isalpha()
+ord() / chr()
+index() / ﬁnd()
+sleep() / random() / math
+Page
+96
+97
+98
+99
+100
+101
+102
+105
+106
+107
+108
+109
+
+--- Page 96 ---
+Common Error Messages
+96
+PYTHON CODING
+MISCELLANEOUS
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+Performing an operation that is not valid for the current value type. Did you forget to cast?
+SyntaxError: invalid syntax
+Invalid code structure. Do you missing brackets, quotes or uses "=" instead of "==" for comparison, etc?
+ValueError: invalid literal for int() with base 10
+Performing invalid casting. If you are casting to integer or ﬂoat, make sure the content is a valid number format.
+IndexError: list index out of range
+Accessing invalid index of a list. Check that the index of a list is in range (0 to len(list)-1)
+TypeError: func() missing n required positional argument
+TypeError: func() takes n positional arguments but m was given
+The number of values that you pass to a function when calling it are not matching.
+
+--- Page 97 ---
+97
+PYTHON CODING
+MISCELLANEOUS
+Clear Screen
+# For macOS and Linux
+import os
+os.system('clear’)
+# For Windows
+import os
+os.system('cls’)
+Clear screen command is dependent on the IDE’s implementation. Some IDEs do not 
+support os module or the os clearscreen command has no effect. For the purpose of creating 
+animation, an old-school trick is by printing a lot of blank lines to push the display to the 
+bottom, creating an illusion of screen being cleared.
+print("  \n" * 40)
+                  
+                space here
+
+--- Page 98 ---
+IN Operator
+The 'in' operator can function in diﬀerent ways:
+for i in range(10):
+…
+for name in namelist:
+…
+if name in namelist:
+…
+if substring in string:
+…
+for use with range
+for use with a list (or other iterables like dictionary which you will 
+learn later). In this example, variable name will store each value 
+in namelist as it loops instead of counting.
+for use in condition. In this example, "name in namelist" will 
+return true if name exists in namelist. This works for other 
+iterables.
+for use in condition. In this example, "substring in string" will 
+return true if substring exists in string. 
+98
+PYTHON CODING
+MISCELLANEOUS
+
+--- Page 99 ---
+PRINT Features
+text = ["A", "B", "C"]
+print(text[0], end="")
+print(text[1])
+print(text[2])
+for i in text:
+print(i , end="") 
+for i in text:
+print(i , end=" ") 
+print(*text , sep="") 
+print(*text , sep="--")
+remove the newline after print
+remove the space between the values
+you can also customize the separator 
+instead of the default space
+ABC
+A B C
+ABC
+you can also customize the end 
+instead of the default newline
+A--B--C
+99
+PYTHON CODING
+MISCELLANEOUS
+remove the newline after print
+"B" is then joined to "A".
+AB
+C
+Screen output
+
+--- Page 100 ---
+Leading and Trailing Zeroes:
+num = 1
+print( str(num).zfill(4) )
+num = 1.2
+print( str(num).zfill(4) )
+num = 1.2
+print( "%06.02f " %num )
+ 
+0001
+01.2
+001.20
+If there are less than 4 characters, leading zeroes will be displayed
+If there are less than 4 characters including decimal point, leading zeroes will be displayed
+If there are less than 6 characters in total including decimal point, leading zeros will be displayed.
+If number after decimal point is less than 2 digits, trailing zeros will be displayed.
+100
+PYTHON CODING
+MISCELLANEOUS
+Screen output
+
+--- Page 101 ---
+variable = int(variable)
+variable = float(variable)
+variable = str(variable)
+variable = list(variable)
+variable = "".join(variable)
+variable = "".join( [str(i) for i in variable] )
+Type Casting
+variable can be a list of 
+any strings/numbers
+variable can be string or number
+But must contain digits only
+variable can be string or number but must 
+contain digits. May also contain decimal point.
+variable can contain 
+any strings/numbers
+variable must be a string
+variable must a list of strings
+to integer
+to float
+to string
+to list of 
+characters
+to string
+to string
+101
+PYTHON CODING
+MISCELLANEOUS
+
+--- Page 102 ---
+Rounding:
+num = 1.234000
+print( round(num) )
+print( round(num, 0) )
+print( round(num, 2) )
+print( round(num, 6) )
+1
+1.0
+1.23
+1.234
+All trailing zeroes are dropped in round function.
+Indicate the number of 
+decimal points required
+102
+PYTHON CODING
+MISCELLANEOUS
+Screen output
+
+--- Page 103 ---
+About Python Round Method
+Note about Python rounding:
+In Python, the rounding method is a little diﬀerent in the way they handle numbers that are 
+exactly halfway between two possible rounded values. 
+In school, you could be taught the "round half up" method, where numbers that are exactly 
+halfway will be rounded up. For examples, 1.5 rounds to 2 and 2.5 rounds to 3. 
+Python uses Banker's rounding ("round half to even"), where such numbers will be rounded 
+to the nearest even number instead. For example, both 1.5 and 2.5 will be rounded to 2. 
+Banker's rounding are normally used in ﬁnancial and statistical sectors to improve accuracy. 
+In this curriculum, you do not have to worry about the precision issue due to the diﬀerent 
+rounding methods. The following slides will show you how to perform "round half up" for your 
+interest.
+103
+PYTHON CODING
+MISCELLANEOUS
+
+--- Page 104 ---
+How to Perform "round half up"
+There are diﬀerent ways to perform "round half up". One method is as shown, to round 
+value to dec number of decimal places:
+import math
+multiplier = (10 ** dec)
+rounded_number = math.floor(abs(value) * multiplier + 0.5) / multiplier
+rounded_number = math.copysign(rounded_number, value)
+For example, in order to round 1.555 to 2 decimal points,
+import math
+multiplier = (10 ** 2)
+rounded_number = math.floor(abs(1.555) * multiplier + 0.5) / multiplier
+rounded_number = math.copysign(rounded_number, 1.555)
+the result will be 1.56 (if you use round(1.555, 2), it will produce 1.55).
+104
+PYTHON CODING
+MISCELLANEOUS
+This removes negative sign so 
+that the rounding is consistent
+This restores the original sign
+
+--- Page 105 ---
+Split / Strip:
+mystring = "Apple Orange"
+str1, str2 = mystring.split()
+mystring = "Apple---Orange"
+str1, str2 = mystring.split("---")
+mystring = "Apple Orange"
+str_list = mystring.split()
+mystring = "    Apple Orange         "
+mystring = mystring.strip()
+mystring = "    Apple Orange         "
+mystring = mystring.lstrip()
+mystring = "    Apple Orange         "
+mystring = mystring.rstrip()
+separate string where there is white space
+str1 == "Apple" and str2 == "Orange"
+remove white spaces in front and at end of the string
+mystring == "Apple Orange"
+separate string where there is exists the specified string 
+(ie. "---" in this example)
+str1 == "Apple" and str2 == "Orange"
+remove white spaces in front of the string
+mystring == "Apple Orange         "
+remove white spaces at the end of the string
+mystring == "    Apple Orange"
+105
+PYTHON CODING
+MISCELLANEOUS
+separate string where there is white space into a list
+str_list[0] == "Apple" and str_list[1] == "Orange"
+
+--- Page 106 ---
+Alphanumeric:
+ABC DEF
+abc def
+Abc Def
+False
+106
+PYTHON CODING
+MISCELLANEOUS
+Screen output
+False
+mystring = "Abc dEf"
+print( mystring.upper() )
+print( mystring.lower() )
+print( mystring.title() )
+print( mystring.isdigit() )
+print( mystring.isalpha() )
+change all to uppercase
+change all to lowercase
+change all to first letter capital
+check if all characters 
+are digits
+check if all characters 
+are alphabet (space is 
+not alphabet)
+
+--- Page 107 ---
+Character code:
+65
+A
+107
+PYTHON CODING
+MISCELLANEOUS
+Screen output
+print( ord("A") )
+print( chr(65) )
+Returns the code number of a character
+Returns the character of a code number
+
+--- Page 108 ---
+String / List index:
+108
+PYTHON CODING
+MISCELLANEOUS
+3
+1
+Screen output
+mystring = "abcdefghi"
+print( mystring.find("def") )
+mylist = ["abc", "def", "ghi"]
+print( mylist.index("def") )
+Find index of a substring in a string
+Find index of a value in a list
+
+--- Page 109 ---
+Other Useful Libraries:
+import time
+time.sleep(n)
+import random
+random.seed(0)
+number = random.randint(n, m)
+import math
+circumference = 10 * math.pi
+squareroot = math.sqrt( n )
+Delay for n number of seconds where n is a positive float number
+Generate random number from n to m where n and m are integers
+109
+PYTHON CODING
+MISCELLANEOUS
+PI constant
+Square root of a number
+This line is optional but can be added to generate the same random numbers 
+each time you restart your code. Useful for testing.
+
+--- Page 110 ---
+PRACTICES and IDEs
+110
+PYTHON CODING
+PRACTICES AND IDES
+
+--- Page 111 ---
+IDE
+You can download and install Python in your laptop (it comes with and IDE called IDLE). You can also install IDEs such as PyCharm and Visual 
+Studio Code for coding.
+There are also many sites that provide online IDEs for you to write and test codes. However, they are managed by external hosts and are constantly 
+updating. So, some things might work diﬀerently after sometime. Here are some online options:
+https://trinket.strivemath.org/
+•
+Supports all the functions required in the curriculum
+•
+Screen is wider with login account
+•
+May need reload sometimes if freezes
+https://python-playground.com/
+•
+In order to keep the screen refreshed while interacting with input() commands in Turtle, use “screen.update()” after drawing.
+https://www.programiz.com/python-programming/online-compiler/
+•
+For simple code
+•
+Does not support ﬁle IO, Turtle and OS modules
+https://coder.csuk.io/coder/
+•
+Pop-up window for input()
+•
+Does not support OS modules
+https://web.thelab.sg (portal IDE)
+•
+Pop-up window for input(), which can aﬀect display.
+•
+Avoid running inﬁnite loop
+•
+Does not support ﬁle IO and OS module
+•
+Limited control over Turtle window
+•
+Less clear in error messages
+111
+PYTHON CODING
+PRACTICES AND IDES
+
+--- Page 112 ---
+Home Practice
+You can ﬁnd many free online resources to sharpen your Python skills at home. Just 
+search for keywords like “Python exercises.” Here are a few sample links to get started.
+https://www.geeksforgeeks.org/python/python-exercises-practice-questions-and-solutions/
+https://www.practicepython.org/exercises/
+https://www.codingame.com/multiplayer/clashofcode
+112
+PYTHON CODING
+PRACTICES AND IDES

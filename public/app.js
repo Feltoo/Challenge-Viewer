@@ -189,12 +189,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     let stepsHtml = '';
                     qb.steps.forEach((step, idx) => {
                         const diffBadge = step.difficulty ? `<span style="background:var(--text-accent); color:var(--bg-dark); padding:2px 8px; border-radius:4px; font-size:12px; margin-left:8px; text-transform:uppercase">${step.difficulty}</span>` : '';
+                        
+                        const answerHtml = step.answer ? `
+                            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
+                                <div style="color: var(--text-accent); font-weight: bold; margin-bottom: 8px; font-size: 14px;">ANSWER KEY</div>
+                                <div style="background: rgba(0,0,0,0.3); padding: 16px; border-radius: 8px; overflow-x: auto;">
+                                    <pre style="margin: 0; font-family: 'Consolas', monospace; font-size: 14px; color: #a6accd;"><code>${step.answer.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>
+                                </div>
+                            </div>
+                        ` : '';
+
                         stepsHtml += `
                         <div class="glass-card" style="margin-bottom: 24px;">
                             <div class="section-title">Step ${step.step_id || (idx + 1)} ${diffBadge}</div>
                             <div class="description-content html-rendered" style="font-size:15px; color:var(--text-primary);">
                                 ${step.description || 'No description provided.'}
                             </div>
+                            ${answerHtml}
                         </div>
                         `;
                     });
