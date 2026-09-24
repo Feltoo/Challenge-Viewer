@@ -78,6 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sortedUnitIds.forEach(unitId => {
             const idNum = parseInt(unitId);
+            // Hide 0 to 2000
+            if (!isNaN(idNum) && idNum >= 0 && idNum <= 2000) {
+                return;
+            }
 
             const unit = state.unitMap.get(unitId) || { name: `Unit ${unitId}`, id: unitId };
             const unitChallenges = state.groupedChallenges.get(unitId) || [];
@@ -150,10 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let pdfLink = '';
         const uId = parseInt(unit.id || challenge.unit || 0);
         
-        if (uId >= 0 && uId <= 99) pdfLink = '/notes/basic.pdf';
-        else if (uId >= 100 && uId <= 1999) pdfLink = '/notes/intermediate.pdf';
-        else if (uId >= 2000 && uId <= 2017) pdfLink = '/notes/foundation.pdf';
-        else if (uId >= 3000 && uId <= 3039) pdfLink = '/notes/advanced_1.pdf';
+        if (uId >= 2001 && uId <= 2017) pdfLink = '/notes/foundation.pdf';
+        else if (uId >= 3001 && uId <= 3016) pdfLink = '/notes/basic.pdf';
+        else if (uId >= 3017 && uId <= 3030) pdfLink = '/notes/intermediate.pdf';
+        else if (uId >= 3031 && uId <= 3039) pdfLink = '/notes/advanced_1.pdf';
         else if (uId >= 3040 && uId <= 3047) pdfLink = '/notes/advanced_2.pdf';
         else if (uId >= 3048 && uId <= 3054) pdfLink = '/notes/advanced_3.pdf';
 
